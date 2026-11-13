@@ -9,7 +9,7 @@ The full-register requirement distinguishes this task from cooling a selected su
 Let $`G=(V,E)`$ be a finite connected graph, with $`n=|V|`$ qubits and a nonempty reset set $`S\subseteq V`$. Write
 
 ```math
-d_v=\operatorname{dist}_G(v,S),\qquad
+d_v=\mathrm{dist}_G(v,S),\qquad
 R=\max_{v\in V}d_v,\qquad
 M(G,S)=\sum_{v\in V}d_v.
 ```
@@ -23,7 +23,7 @@ Distances count graph edges. A round $`t=1,\ldots,T`$ consists, in this exact or
 For a site $`v`$, define the complete depolarizer and the actual noise by
 
 ```math
-\mathcal E_v(X)=\frac{I_v}{2}\otimes\operatorname{Tr}_v X,
+\mathcal E_v(X)=\frac{I_v}{2}\otimes\mathrm{Tr}_v X,
 \qquad
 \mathcal D_{p,v}=(1-p)\,\mathrm{id}+p\,\mathcal E_v,
 \qquad 0\le p\le1.
@@ -55,17 +55,17 @@ The elapsed circuit depth $`T`$, the number and positions of contacts, and the n
 The target replacement channel is
 
 ```math
-\mathcal R_0(X)=\operatorname{Tr}(X)\,|0^n\rangle\langle0^n|.
+\mathcal R_0(X)=\mathrm{Tr}(X)\,|0^n\rangle\langle0^n|.
 ```
 
 Measure the complete initialization error by half the diamond distance:
 
 ```math
 \epsilon(\Psi_T)
-=\frac12\|\Psi_T-\mathcal R_0\|_\diamond
+=\frac12\Vert \Psi_T-\mathcal R_0\Vert _\diamond
 =\sup_{\rho_{VA}}\frac12
-\left\|(\Psi_T\otimes\mathrm{id}_A)(\rho_{VA})
--|0^n\rangle\langle0^n|\otimes\rho_A\right\|_1.
+\left\Vert (\Psi_T\otimes\mathrm{id}_A)(\rho_{VA})
+-|0^n\rangle\langle0^n|\otimes\rho_A\right\Vert _1.
 ```
 
 A reference of dimension $`2^n`$ suffices. This criterion requires both physical purity and decoupling from the input reference. Define $`\epsilon_*(G,S,p)`$ as the infimum over all finite depths and admissible controls, including the depth-zero identity if desired.
@@ -104,7 +104,7 @@ with absolute constants. If every site is a contact, $`M=0`$ and a final paralle
 
 For $`pM\ll1`$, the lower bound is $`pM/2+O((pM)^2)`$. It identifies the optimal order, not the exact finite-size optimum or its leading constant. For $`pM\gtrsim1`$, the converse supplies a constant error floor approaching $`1/2`$; it does not assert that every protocol's error approaches one.
 
-At prescribed error $`0<\epsilon<1/2`$ and $`0<p<1`$, a necessary condition is
+At prescribed error $`0\lt \epsilon\lt 1/2`$ and $`0\lt p\lt 1`$, a necessary condition is
 
 ```math
 M(G,S)\le

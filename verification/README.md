@@ -58,9 +58,9 @@ The Choi calculation checks full replacement and reference decoupling; the exact
 For arbitrary fixed ports on a line, the construction partitions the line into contiguous nearest-port cells, breaking a distance tie toward the left port. Each cell runs the alternating SWAP pattern with its **actual** reset port, which can lie in its interior. The finite trajectory test finishes all cells at the common time `2 max(cell length)−1`. The analytical fixed-placement construction uses the safe full-period depth `2 max(cell length)`; its age bound holds at either late parity, and both finishing conventions are checked in the carrier diagnostics. The finite trajectory checks confirm
 
 ```math
-\sum_v a_v\leq2\sum_v\operatorname{dist}(v,S),
+\sum_v a_v\leq2\sum_v\mathrm{dist}(v,S),
 \qquad
-\epsilon_{\rm conv}\leq p\sum_v\operatorname{dist}(v,S),
+\epsilon_{\rm conv}\leq p\sum_v\mathrm{dist}(v,S),
 ```
 
 where `a_v` counts the noise exposures of the final output carrier since its last reset. Neither an extra reset at a cell endpoint nor discarded output space is introduced.

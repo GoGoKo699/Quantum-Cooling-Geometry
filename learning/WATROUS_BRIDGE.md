@@ -28,7 +28,7 @@ A state $`\rho`$ is a positive operator with trace one. A channel is a linear, c
 For a register $`V`$ of $`n`$ qubits, ideal initialization is the replacement channel
 
 ```math
-\mathcal R_0(X)=\operatorname{Tr}(X)|0^n\rangle\langle0^n|.
+\mathcal R_0(X)=\mathrm{Tr}(X)|0^n\rangle\langle0^n|.
 ```
 
 This discards the input information and prepares the specified state. A circuit that happens to leave $`|0^n\rangle`$ unchanged has not thereby implemented replacement on an unknown input.
@@ -36,23 +36,23 @@ This discards the input information and prepares the specified state. A circuit 
 The project uses half trace distance for states and half diamond distance for channels:
 
 ```math
-D(\rho,\sigma)=\frac12\|\rho-\sigma\|_1,
+D(\rho,\sigma)=\frac12\Vert \rho-\sigma\Vert _1,
 \qquad
-\epsilon(\Psi)=\frac12\|\Psi-\mathcal R_0\|_\diamond.
+\epsilon(\Psi)=\frac12\Vert \Psi-\mathcal R_0\Vert _\diamond.
 ```
 
-Watrous calls the latter norm the **completely bounded trace norm**, writing it with triple bars and subscript 1. It is the same norm denoted by $`\|\cdot\|_\diamond`$ here; our error includes the additional factor $`1/2`$.
+Watrous calls the latter norm the **completely bounded trace norm**, writing it with triple bars and subscript 1. It is the same norm denoted by $`\Vert \cdot\Vert _\diamond`$ here; our error includes the additional factor $`1/2`$.
 
 Operationally, the initialization guarantee is
 
 ```math
-\frac12\left\|
+\frac12\left\Vert 
 (\Psi\otimes\mathrm{id}_A)(\rho_{VA})
 -|0^n\rangle\langle0^n|\otimes\rho_A
-\right\|_1\le\epsilon
+\right\Vert _1\le\epsilon
 ```
 
-for every register–reference input $`\rho_{VA}`$. The reference marginal is $`\rho_A=\operatorname{Tr}_V\rho_{VA}`$. Taking no reference gives an ordinary state test. Such a test can disprove a universal guarantee, while success on one input does not establish it. A replacement-channel construction, as below, establishes the reference guarantee directly.
+for every register–reference input $`\rho_{VA}`$. The reference marginal is $`\rho_A=\mathrm{Tr}_V\rho_{VA}`$. Taking no reference gives an ordinary state test. Such a test can disprove a universal guarantee, while success on one input does not establish it. A replacement-channel construction, as below, establishes the reference guarantee directly.
 
 Use **target population** for $`f_0=\langle0^n|\rho|0^n\rangle`$. This is a measurement probability; it avoids confusing that probability with a square-root fidelity convention. The measurement “all zeros or otherwise” implies
 
@@ -71,7 +71,7 @@ The one-site noise is
 ```math
 \mathcal D_p=(1-p)\,\mathrm{id}+p\,\mathcal E,
 \qquad
-\mathcal E(X)=\operatorname{Tr}(X)\frac I2.
+\mathcal E(X)=\mathrm{Tr}(X)\frac I2.
 ```
 
 Thus $`p`$ is the weight of complete depolarization in this decomposition. Equivalently, the Pauli probabilities are $`1-3p/4`$ for the identity and $`p/4`$ for each of $`X,Y,Z`$. The decomposition labels are not observed by the controller. Idle qubits experience the same noise.
@@ -112,7 +112,7 @@ f_0\le\frac{1+(1-p)^3}{2},
 \epsilon\ge\frac{1-(1-p)^3}{2}.
 ```
 
-For $`T<2`$, inserting a complete depolarizer on site 3 at the maximally mixed input changes nothing. Its cone still cannot meet the contact, so the same mixed-factor argument gives error at least $`1/2`$. Thus shortening the protocol cannot evade the displayed floor. The [full converse](../science/converse.md) makes the argument duration-uniform on every graph.
+For $`T\lt 2`$, inserting a complete depolarizer on site 3 at the maximally mixed input changes nothing. Its cone still cannot meet the contact, so the same mixed-factor argument gives error at least $`1/2`$. Thus shortening the protocol cannot evade the displayed floor. The [full converse](../science/converse.md) makes the argument duration-uniform on every graph.
 
 ### A concrete controller and its exact error
 
@@ -158,7 +158,7 @@ The lower bound applies to every admissible controller; the upper value is the e
 
 ## From the example to the geometry law
 
-On a graph with reset set $`S`$, define $`d_v=\operatorname{dist}(v,S)`$. At noise layer $`t`$ there are $`T-t`$ future gate layers. The layers satisfying $`T-t<d_v`$ contribute
+On a graph with reset set $`S`$, define $`d_v=\mathrm{dist}(v,S)`$. At noise layer $`t`$ there are $`T-t`$ future gate layers. The layers satisfying $`T-t\lt d_v`$ contribute
 
 ```math
 M_T=\sum_v\min\{T,d_v\}.

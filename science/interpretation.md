@@ -5,7 +5,7 @@ An ideal cold contact can erase the qubit that reaches it. Bulk noise continues 
 On a path the right geometric quantity is the sum of distances to the nearest contact, not just the largest distance or the number of contacts:
 
 ```math
-M(P_n,S)=\sum_{v=1}^n\operatorname{dist}(v,S),
+M(P_n,S)=\sum_{v=1}^n\mathrm{dist}(v,S),
 \qquad
 \epsilon_*\asymp\min\{1,pM(P_n,S)\}.
 ```

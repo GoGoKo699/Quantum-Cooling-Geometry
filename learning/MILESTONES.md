@@ -46,7 +46,7 @@ The allocation is **12 background/preliminary milestones and 18 narrative/innova
 
 **Central question.** What does it mean to erase an arbitrary input rather than prepare one favorable input?
 
-**Understanding target.** Explain the replacement channel $`\mathcal R_0(X)=\operatorname{Tr}(X)|0^n\rangle\langle0^n|`$ and why its action must be independent of the supplied register state.
+**Understanding target.** Explain the replacement channel $`\mathcal R_0(X)=\mathrm{Tr}(X)|0^n\rangle\langle0^n|`$ and why its action must be independent of the supplied register state.
 
 **Dependencies and story role.** M02–M03; this specifies the global operation the project seeks to approximate.
 
@@ -156,7 +156,7 @@ The allocation is **12 background/preliminary milestones and 18 narrative/innova
 
 **Central question.** Which noise locations have too little time left to reach a cold contact?
 
-**Understanding target.** Derive the terminal condition $`T-t<d_v`$ and explain the count $`M_T=\sum_v\min\{T,d_v\}`$ from one site's last vulnerable rounds to the whole graph.
+**Understanding target.** Derive the terminal condition $`T-t\lt d_v`$ and explain the count $`M_T=\sum_v\min\{T,d_v\}`$ from one site's last vulnerable rounds to the whole graph.
 
 **Dependencies and story role.** M06, M10, and M12; this identifies the geometric object that the proof will use.
 
@@ -216,7 +216,7 @@ The allocation is **12 background/preliminary milestones and 18 narrative/innova
 
 **Central question.** Why can neither a shallow circuit nor a longer schedule escape the graph floor?
 
-**Understanding target.** Distinguish $`T\ge R`$, where $`M_T=M(G,S)`$, from $`T<R`$, where an inserted input depolarizer on the maximally mixed state yields a half-error obstruction.
+**Understanding target.** Distinguish $`T\ge R`$, where $`M_T=M(G,S)`$, from $`T\lt R`$, where an inserted input depolarizer on the maximally mixed state yields a half-error obstruction.
 
 **Dependencies and story role.** M09–M10 and M17; this completes the duration-independent arbitrary-control converse.
 
