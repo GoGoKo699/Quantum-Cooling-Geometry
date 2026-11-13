@@ -2,6 +2,8 @@
 
 This suite checks the finite identities and consequential failure modes in the boundary-reset argument. The general theorems rest on the written proofs; finite computations do not certify them or establish publication priority.
 
+The read-only [hosted-math workflow](../.github/workflows/hosted-math.yml) separately compares every tracked Markdown expression at the exact pull-request head with the actual GitHub renderer, at widths 1440 and 760. It retains HTML, screenshots and structural comparison reports as a temporary Actions artifact. These checks detect rendering loss and geometry problems; they do not prove the science, and screenshots still need visual review. The collector and comparison script live in `verification/hosted_math/`; their runtime dependencies are pinned in the workflow and installed outside the checkout.
+
 Run from the repository root with Python and NumPy:
 
 ```bash
@@ -56,9 +58,9 @@ The Choi calculation checks full replacement and reference decoupling; the exact
 For arbitrary fixed ports on a line, the construction partitions the line into contiguous nearest-port cells, breaking a distance tie toward the left port. Each cell runs the alternating SWAP pattern with its **actual** reset port, which can lie in its interior. The finite trajectory test finishes all cells at the common time `2 max(cell length)−1`. The analytical fixed-placement construction uses the safe full-period depth `2 max(cell length)`; its age bound holds at either late parity, and both finishing conventions are checked in the carrier diagnostics. The finite trajectory checks confirm
 
 ```math
-\sum_v a_v\leq2\sum_v\operatorname{dist}(v,S),
+\sum_v a_v\leq2\sum_v\mathrm{dist}(v,S),
 \qquad
-\epsilon_{\rm conv}\leq p\sum_v\operatorname{dist}(v,S),
+\epsilon_{\rm conv}\leq p\sum_v\mathrm{dist}(v,S),
 ```
 
 where `a_v` counts the noise exposures of the final output carrier since its last reset. Neither an extra reset at a cell endpoint nor discarded output space is introduced.

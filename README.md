@@ -5,7 +5,7 @@
 For a path with reset set $`S`$, independent depolarization $`p`$ per round, and
 
 ```math
-M=\sum_v\operatorname{dist}(v,S),
+M=\sum_v\mathrm{dist}(v,S),
 ```
 
 the optimal complete initialization error satisfies
@@ -29,7 +29,7 @@ The figure uses 16 qubits and 8 contacts. The [general comparison](science/inter
 | Any finite connected graph with nonempty contacts | Exact lower bound $`[1-(1-p)^M]/2`$ | [Causal converse](science/converse.md) |
 | Any fixed contact placement on a chain | $`\epsilon_*=\Theta(\min\{1,pM\})`$ when $`M>0`$ | [Matching path construction](science/geometry.md#every-fixed-contact-placement-on-a-path) |
 | One endpoint contact on an $`n`$-qubit chain, $`n\ge2`$ | $`\Theta(\min\{1,pn^2\})`$ | [Exact conveyor channel](science/geometry.md#a-one-contact-path-conveyor) |
-| Best placement of $`m<n`$ contacts on a chain | $`\Theta(\min\{1,pn(n-m)/m\})`$; exact minimum distance sum also given | [Contact placement](science/geometry.md#optimally-placed-contacts-on-a-path) |
+| Best placement of $`m\lt n`$ contacts on a chain | $`\Theta(\min\{1,pn(n-m)/m\})`$; exact minimum distance sum also given | [Contact placement](science/geometry.md#optimally-placed-contacts-on-a-path) |
 | Slab of thickness $`L\ge2`$ and $`N`$ qubits, one full cold face | $`\Theta(\min\{1,pN(L-1)\})`$ | [Slab construction](science/geometry.md#rectangular-slabs-with-one-full-cold-face) |
 | Every site is a contact | Exact zero error after a final parallel reset | [Output convention](science/model.md#register-contacts-and-round-convention) |
 
@@ -42,6 +42,8 @@ At the common output time, some recent noise events are too far from a contact f
 ## Read and reproduce
 
 Start with the [scientific overview](science/README.md) and [exact model](science/model.md), then read the [converse](science/converse.md), [constructions](science/geometry.md), and [physical consequences](science/interpretation.md). [Noise and scope](science/noise_and_scope.md) gives the mixed-unitary extension and target-preserving counterexamples. The [LLM reading guide](llms.txt) maps questions to authoritative files.
+
+For a guided conceptual route, use the [Watrous 2018 source bridge and worked three-qubit example](learning/WATROUS_BRIDGE.md), then the [30-milestone map](learning/MILESTONES.md). The [learning entrypoint](learning/README.md) connects the prerequisites to the scientific proofs.
 
 From the repository root:
 

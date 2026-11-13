@@ -7,9 +7,10 @@ This page builds matching upper bounds for the [model](model.md), using the [arb
 Consider a path of $`\ell\ge2`$ qubits with a cold contact at its left endpoint. Apply SWAPs on bonds $`(1,2),(3,4),\ldots`$ in odd rounds and on $`(2,3),(4,5),\ldots`$ in even rounds, with the stipulated noise and a reset at site 1 after every layer. Take $`T=2\ell-1`$. For $`\ell=1`$, take one reset round and the output is exactly pure.
 
 **Lemma 3 — complete replacement and output ages.** Every original qubit carrier visits the contact by time $`2\ell-1`$ and is discarded there. The multiset of the final carriers' noise ages since their last contact reset is
+**Equation (4).**
+
 ```math
 \{0,1,3,5,\ldots,2\ell-3\}.
-\tag{4}
 ```
 
 **Proof.** In the odd/even SWAP network a carrier moves one site per round until it reaches an endpoint. At that endpoint it waits for one round and reverses direction. An original carrier initially moving left reaches site 1 in at most $`\ell-1`$ rounds. One initially moving right first reaches site $`\ell`$, waits one round, and then reaches site 1, in at most $`2\ell-1`$ rounds. Reset discards the visiting carrier and inserts a fresh $`|0\rangle`$ carrier.
@@ -21,19 +22,21 @@ Depolarization acts independently on these SWAP trajectories. All original carri
 \rho_a=\frac12\bigl[I+(1-p)^a Z\bigr].
 ```
 Because the output is diagonal in the target basis, its half trace distance to the all-zero target equals one minus target population. Thus the conveyor's exact half-diamond error is
+**Equation (5).**
+
 ```math
 \boxed{\displaystyle
 \epsilon_{\rm conv}(\ell,p)
 =1-\prod_{k=1}^{\ell-1}
 \frac{1+(1-p)^{2k-1}}2.}
-\tag{5}
 ```
 The empty product for $`\ell=1`$ is one. In particular,
+**Equation (6).**
+
 ```math
 \epsilon_{\rm conv}(\ell,p)
 \le\frac p2\sum_{k=1}^{\ell-1}(2k-1)
 =\frac p2(\ell-1)^2.
-\tag{6}
 ```
 For a fixed endpoint contact, $`M=\ell(\ell-1)/2`$. The [graph converse](converse.md) and (6) establish
 ```math
@@ -47,11 +50,12 @@ uniformly for $`\ell\ge2`$ and $`0\le p\le1`$, with universal constants. The kno
 The distance-sum converse also has a matching upper for every nonempty fixed contact set on a path; it is not limited to an optimized layout.
 
 **Theorem 4 — fixed path placement.** For every $`\varnothing\ne S\subseteq V(P_n)`$, let $`M=M(P_n,S)`$. Then
+**Equation (7a).**
+
 ```math
 \frac{1-(1-p)^M}{2}
 \le\inf_{T,\Phi_T}\epsilon(\Phi_T)
 \le\min\{1,pM\}.
-\tag{7a}
 ```
 For $`M\ge1`$ this is $`\Theta(\min\{1,pM\})`$ with universal constants. For $`M=0`$, every site is a contact and the exact optimum is zero after one reset round.
 
@@ -88,16 +92,17 @@ The upper uses depth $`2\max_i a_i`$, with resets in every round and no extra qu
 
 Let $`1\le m\le n`$, and minimize $`M(P_n,S)`$ over all $`m`$-vertex contact sets. Write
 ```math
-n=qm+r,\qquad q=\lfloor n/m\rfloor,\qquad 0\le r<m.
+n=qm+r,\qquad q=\lfloor n/m\rfloor,\qquad 0\le r\lt m.
 ```
 
 **Proposition 5 — exact placement cost.** The minimum distance sum is
+**Equation (7).**
+
 ```math
 \boxed{\displaystyle
 M_{n,m}^{\min}
 =(m-r)\left\lfloor\frac{q^2}{4}\right\rfloor
 +r\left\lfloor\frac{(q+1)^2}{4}\right\rfloor.}
-\tag{7}
 ```
 It is attained by partitioning the path into $`m-r`$ contiguous cells of size $`q`$ and $`r`$ of size $`q+1`$, with a contact at a median vertex of each cell.
 
@@ -112,16 +117,18 @@ g(a+1)-g(a)=\left\lceil\frac a2\right\rceil
 are nondecreasing. Balancing two cell sizes cannot increase their sum of costs, so the displayed balanced sizes minimize $`\sum_i g(a_i)`$, giving the lower bound (7). Place medians in such balanced cells. Assigning each cell to its own median costs exactly (7), while the actual nearest-contact cost can only be smaller. The lower bound already proved makes it equal. $`\square`$
 
 This exact finite formula handles the dense-contact boundary. In particular,
+**Equation (8).**
+
 ```math
 M_{n,m}^{\min}=n-m
 \quad\text{when }m\ge\lceil n/2\rceil,
 \qquad M_{n,n}^{\min}=0.
-\tag{8}
 ```
 More generally, setting $`C_{n,m}=n(n-m)/m`$,
+**Equation (9).**
+
 ```math
 \frac14 C_{n,m}\le M_{n,m}^{\min}\le C_{n,m}.
-\tag{9}
 ```
 For the lower bound use $`g(a)\ge a(a-1)/4`$ and $`\sum_i a_i^2\ge n^2/m`$. For the upper, balanced cells satisfy $`a_i\le\lceil n/m\rceil\le2n/m`$, and $`g(a_i)\le a_i(a_i-1)/2\le(n/m)(a_i-1)`$. Sum over cells. All terms vanish when $`m=n`$.
 
@@ -133,27 +140,30 @@ Define the best error with $`m`$ freely placed contacts by
 ```
 
 **Theorem 6 — path contact-accuracy frontier.** For every $`n,m,p`$ in the stated domains,
+**Equation (10).**
+
 ```math
 \frac{1-(1-p)^{M_{n,m}^{\min}}}{2}
 \le\epsilon^*_{n,m}(p)
 \le\min\{1,pM_{n,m}^{\min}\}.
-\tag{10}
 ```
-For $`m<n`$, consequently,
+For $`m\lt n`$, consequently,
+**Equation (11).**
+
 ```math
 \boxed{\displaystyle
 \epsilon^*_{n,m}(p)
 =\Theta\!\left(\min\left\{1,
 p\,\frac{n(n-m)}m\right\}\right).}
-\tag{11}
 ```
 For $`m=n`$, its exact value is zero after one round of contact resets.
 
 **Achievability and order.** Use the balanced median-contact placement from Proposition 5 and Theorem 4's fixed-placement conveyor. The construction has depth $`2\lceil n/m\rceil`$ and error at most $`pM_{n,m}^{\min}`$. Its full channel is exactly replacement by a diagonal product state. If $`a_v`$ denotes a final carrier's noise age, its exact target fidelity is
+**Equation (12).**
+
 ```math
 F_{\rm cells}=\prod_{v\in V}\frac{1+(1-p)^{a_v}}2,
 \qquad \sum_v a_v\le2M_{n,m}^{\min}.
-\tag{12}
 ```
 The lower follows from the [graph converse](converse.md) and Proposition 5. For $`pM\ge1`$, the lower is at least $`(1-e^{-1})/2`$; for $`pM\le1`$, it is at least $`(1-e^{-1})pM/2`$. These constants and (9) establish the uniform order (11).
 
@@ -168,35 +178,39 @@ G=P_L\mathbin\square P_{L_2}\mathbin\square\cdots\mathbin\square P_{L_d},
 A=\prod_{j=2}^dL_j,\qquad N=AL,
 ```
 where each side length is a positive integer. For $`d=1`$, use the empty product $`A=1`$. Let the entire face $`x_1=1`$ be cold, so $`|S|=A`$. A vertex at coordinate $`x_1`$ has contact distance $`x_1-1`$, even when transverse gates are allowed. Therefore
+**Equation (13).**
+
 ```math
 \boxed{\displaystyle
 M(G,S)=A\frac{L(L-1)}2
 =\frac{N(L-1)}2.}
-\tag{13}
 ```
 
 For $`L\ge2`$, run independent endpoint conveyors along the $`A`$ longitudinal columns. They use no transverse gates and finish in $`2L-1`$ rounds. The exact error of this construction is
+**Equation (14).**
+
 ```math
 \epsilon_{\rm slab,conv}
 =1-\left[
 \prod_{k=1}^{L-1}\frac{1+(1-p)^{2k-1}}2
 \right]^A
 \le\frac p2 A(L-1)^2.
-\tag{14}
 ```
 Combining with the arbitrary-local-circuit converse,
+**Equation (15).**
+
 ```math
 \frac{1-(1-p)^{AL(L-1)/2}}2
 \le\epsilon^*_{\rm slab}(p)
 \le\min\left\{1,\frac p2 A(L-1)^2\right\}.
-\tag{15}
 ```
 Thus, uniformly over the positive side lengths and $`L\ge2`$,
+**Equation (16).**
+
 ```math
 \boxed{\displaystyle
 \epsilon^*_{\rm slab}(p)
 =\Theta\!\left(\min\{1,pN(L-1)\}\right).}
-\tag{16}
 ```
 For $`L=1`$, every vertex lies on the cold face and one final reset gives exact error zero. Equation (16) is consistent with this degenerate limit when interpreted separately rather than invoking nonzero-order notation.
 

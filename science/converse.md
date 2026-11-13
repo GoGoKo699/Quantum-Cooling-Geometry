@@ -25,7 +25,7 @@ The resulting conditional output has the form
 for some global unitary $`W`$ and density matrix $`\tau`$. In particular,
 
 ```math
-\|\rho_{\mathrm{out}}\|_\infty\le\frac12.
+\Vert \rho_{\mathrm{out}}\Vert _\infty\le\frac12.
 ```
 
 This remains true when the earlier input is mixed or reference-entangled. The same factorization holds with the reference included in $`\tau`$; taking its partial trace gives the displayed register state. Averaging the other unitary trajectories preserves the largest-eigenvalue bound by convexity.
@@ -37,14 +37,14 @@ The conclusion does not rely on a general claim that reset maps preserve largest
 For a depth-$`T`$ protocol, label a noise layer by $`t\in\{1,\ldots,T\}`$. There are $`T-t`$ future gate layers after that noise. A disturbance at $`v`$ cannot reach a contact if
 
 ```math
-T-t<d_v.
+T-t\lt d_v.
 ```
 
 The terminal set and its size are therefore
 
 ```math
 \mathcal L_T
-=\{(v,t):1\le t\le T,\ T-t<d_v\},
+=\{(v,t):1\le t\le T,\ T-t\lt d_v\},
 \qquad
 M_T=|\mathcal L_T|=\sum_v\min\{T,d_v\}.
 ```
@@ -72,7 +72,7 @@ Averaging is essential: the Bernoulli labels are a mathematical decomposition of
 For the target $`|0^n\rangle`$, the measurement with effect $`|0^n\rangle\langle0^n|`$ gives
 
 ```math
-\frac12\|\Psi_T(\rho)-|0^n\rangle\langle0^n|\|_1
+\frac12\Vert \Psi_T(\rho)-|0^n\rangle\langle0^n|\Vert _1
 \ge1-\langle0^n|\Psi_T(\rho)|0^n\rangle
 \ge\frac{1-(1-p)^{M_T}}2.
 ```
@@ -83,7 +83,7 @@ The diamond error includes this input test, so the same lower bound applies to c
 
 If $`T\ge R`$, then $`M_T=M(G,S)`$ and the desired bound already follows.
 
-For $`T<R`$, select a site $`v`$ with $`d_v>T`$ and use the maximally mixed register input $`I/2^n`$. Insert a complete depolarizer $`\mathcal E_v`$ at the input; it leaves this state unchanged. Expand all actual depolarizing noise into random Pauli unitaries. The inserted depolarizer's forward cone misses every contact through all $`T`$ rounds, so the same factorization lemma gives an output largest eigenvalue at most $`1/2`$. Its distance from a pure target is consequently at least $`1/2`$.
+For $`T\lt R`$, select a site $`v`$ with $`d_v>T`$ and use the maximally mixed register input $`I/2^n`$. Insert a complete depolarizer $`\mathcal E_v`$ at the input; it leaves this state unchanged. Expand all actual depolarizing noise into random Pauli unitaries. The inserted depolarizer's forward cone misses every contact through all $`T`$ rounds, so the same factorization lemma gives an output largest eigenvalue at most $`1/2`$. Its distance from a pure target is consequently at least $`1/2`$.
 
 This covers the shallow case because $`[1-(1-p)^M]/2\le1/2`$. It also handles depth zero. Combining both cases gives, for every duration and all admissible controls,
 
