@@ -1,0 +1,24 @@
+{
+  "scope": "Finite exact-integer geometry and carrier-age diagnostics; no proof certification.",
+  "placement": {
+    "n_max": 12,
+    "parameter_pairs": 78,
+    "status": "passed"
+  },
+  "conveyors": {
+    "length_max": 80,
+    "arbitrary_port_phase_cases": 6480,
+    "endpoint_age_multisets": 79,
+    "status": "passed"
+  },
+  "slabs": {
+    "dimensions": [
+      1,
+      2,
+      3
+    ],
+    "side_max": 5,
+    "boxes": 155,
+    "status": "passed"
+  }
+}
