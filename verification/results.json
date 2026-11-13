@@ -1,0 +1,667 @@
+{
+  "status": "passed",
+  "generated_at_utc": "2026-11-13T08:01:54.009143+00:00",
+  "seed": 1729,
+  "python_version": "3.12.14",
+  "numpy_version": "2.3.5",
+  "absolute_tolerance": 2e-10,
+  "model": "Disjoint nearest-neighbor unitary layer; iid D_p on all sites including idle; boundary CPTP/reset last; all qubits retained",
+  "conveyor": {
+    "n_range": [
+      1,
+      128
+    ],
+    "probability_cases": 768,
+    "max_weak_noise_coefficient_relative_error": 2.486622685538009e-08,
+    "examples": [
+      {
+        "n": 1,
+        "rounds": 1,
+        "age_multiset": [
+          0
+        ],
+        "error_at_p_0.001": -0.0
+      },
+      {
+        "n": 2,
+        "rounds": 3,
+        "age_multiset": [
+          0,
+          1
+        ],
+        "error_at_p_0.001": 0.0005
+      },
+      {
+        "n": 3,
+        "rounds": 5,
+        "age_multiset": [
+          0,
+          1,
+          3
+        ],
+        "error_at_p_0.001": 0.0019977512497499996
+      },
+      {
+        "n": 8,
+        "rounds": 15,
+        "age_multiset": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13
+        ],
+        "error_at_p_0.001": 0.024158717830824305
+      },
+      {
+        "n": 32,
+        "rounds": 63,
+        "age_multiset": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35,
+          37,
+          39,
+          41,
+          43,
+          45,
+          47,
+          49,
+          51,
+          53,
+          55,
+          57,
+          59,
+          61
+        ],
+        "error_at_p_0.001": 0.3785948811594882
+      }
+    ]
+  },
+  "reference_channel": {
+    "scope": "Normalized Choi state: all data qubits initially maximally entangled with reference",
+    "cases": [
+      {
+        "n": 2,
+        "ports": [
+          0
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 0.0
+      },
+      {
+        "n": 2,
+        "ports": [
+          0
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 1.6743451780617611e-16
+      },
+      {
+        "n": 2,
+        "ports": [
+          0
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 1.7554167342883506e-16
+      },
+      {
+        "n": 3,
+        "ports": [
+          0
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 7.850462293418876e-17
+      },
+      {
+        "n": 3,
+        "ports": [
+          0
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 3.9740894887149515e-16
+      },
+      {
+        "n": 3,
+        "ports": [
+          0
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 1.0534785856642481e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          0
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 0.0
+      },
+      {
+        "n": 4,
+        "ports": [
+          0
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 2.8925380287056324e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          0
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 1.8409331462641206e-16
+      },
+      {
+        "n": 3,
+        "ports": [
+          1
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 7.850462293418876e-17
+      },
+      {
+        "n": 3,
+        "ports": [
+          1
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 3.9619933989911083e-16
+      },
+      {
+        "n": 3,
+        "ports": [
+          1
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 9.463389583759429e-17
+      },
+      {
+        "n": 4,
+        "ports": [
+          1
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 0.0
+      },
+      {
+        "n": 4,
+        "ports": [
+          1
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 3.161859329578685e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          1
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 1.7617481306933618e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          1,
+          3
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 0.0
+      },
+      {
+        "n": 4,
+        "ports": [
+          1,
+          3
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 2.802585231711608e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          1,
+          3
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 1.639107157088942e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          0,
+          2
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 0.0
+      },
+      {
+        "n": 4,
+        "ports": [
+          0,
+          2
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 1.9504776742912836e-16
+      },
+      {
+        "n": 4,
+        "ports": [
+          0,
+          2
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 9.72064493212764e-17
+      },
+      {
+        "n": 4,
+        "ports": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "p": 0.0,
+        "choi_frobenius_error": 0.0
+      },
+      {
+        "n": 4,
+        "ports": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "p": 0.07,
+        "choi_frobenius_error": 5.551115123125783e-17
+      },
+      {
+        "n": 4,
+        "ports": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "p": 0.45,
+        "choi_frobenius_error": 5.551115123125783e-17
+      }
+    ],
+    "max_frobenius_error": 3.9740894887149515e-16
+  },
+  "interior_port_conveyors": {
+    "n_range": [
+      1,
+      48
+    ],
+    "all_ports_and_two_starting_phases": true,
+    "finishing_times": "2n-1,2n,2n+1",
+    "cases": 7056,
+    "largest_sum_age_over_twice_distance_sum": 1.0,
+    "largest_first_clear_over_2n_minus_1": 1.0
+  },
+  "arbitrary_quantum_controls": {
+    "n_values": [
+      2,
+      3,
+      4
+    ],
+    "cases": 600,
+    "p_values": [
+      0.001,
+      0.04,
+      0.3,
+      0.9,
+      1.0
+    ],
+    "max_lambda_max_minus_bound": 2.220446049250313e-16,
+    "max_trace_error": 3.552770528633845e-15,
+    "minimum_output_eigenvalue": 0.0,
+    "scope": "Random pure, mixed and maximally mixed inputs; Haar entangling layers; ideal or random rank-four boundary CPTP maps"
+  },
+  "selected_event_factorization": {
+    "cases": 120,
+    "max_push_through_frobenius_error": 8.699787100696253e-16,
+    "max_conditional_lambda_max": 0.43525952236358134,
+    "outside_late_cone_negative_control_gap": 0.7071067811865476,
+    "dephasing_preserves_target_negative_control": true,
+    "scope": "Selected full depolarizer kept unconditioned; all other depolarizers conditioned only as random Pauli unitaries"
+  },
+  "geometry": {
+    "exhaustive_line_n_range": [
+      2,
+      11
+    ],
+    "port_placements": 4082,
+    "observed_min_optimal_distance_sum_over_n_n_minus_m_over_m": 0.2727272727272727,
+    "observed_max_optimal_distance_sum_over_n_n_minus_m_over_m": 0.9090909090909091,
+    "examples": [
+      {
+        "n": 5,
+        "m": 1,
+        "optimal_distance_sum": 6,
+        "balanced_endpoint_interval_sizes": [
+          5
+        ],
+        "conveyor_noise_age_sum": 16
+      },
+      {
+        "n": 5,
+        "m": 2,
+        "optimal_distance_sum": 3,
+        "balanced_endpoint_interval_sizes": [
+          3,
+          2
+        ],
+        "conveyor_noise_age_sum": 5
+      },
+      {
+        "n": 5,
+        "m": 4,
+        "optimal_distance_sum": 1,
+        "balanced_endpoint_interval_sizes": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "conveyor_noise_age_sum": 1
+      },
+      {
+        "n": 5,
+        "m": 5,
+        "optimal_distance_sum": 0,
+        "balanced_endpoint_interval_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conveyor_noise_age_sum": 0
+      },
+      {
+        "n": 10,
+        "m": 1,
+        "optimal_distance_sum": 25,
+        "balanced_endpoint_interval_sizes": [
+          10
+        ],
+        "conveyor_noise_age_sum": 81
+      },
+      {
+        "n": 10,
+        "m": 2,
+        "optimal_distance_sum": 12,
+        "balanced_endpoint_interval_sizes": [
+          5,
+          5
+        ],
+        "conveyor_noise_age_sum": 32
+      },
+      {
+        "n": 10,
+        "m": 9,
+        "optimal_distance_sum": 1,
+        "balanced_endpoint_interval_sizes": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conveyor_noise_age_sum": 1
+      },
+      {
+        "n": 10,
+        "m": 10,
+        "optimal_distance_sum": 0,
+        "balanced_endpoint_interval_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conveyor_noise_age_sum": 0
+      }
+    ],
+    "slabs": [
+      {
+        "dimension": 1,
+        "length": 2,
+        "n": 2,
+        "distance_sum": 1
+      },
+      {
+        "dimension": 1,
+        "length": 3,
+        "n": 3,
+        "distance_sum": 3
+      },
+      {
+        "dimension": 1,
+        "length": 4,
+        "n": 4,
+        "distance_sum": 6
+      },
+      {
+        "dimension": 1,
+        "length": 5,
+        "n": 5,
+        "distance_sum": 10
+      },
+      {
+        "dimension": 1,
+        "length": 6,
+        "n": 6,
+        "distance_sum": 15
+      },
+      {
+        "dimension": 1,
+        "length": 7,
+        "n": 7,
+        "distance_sum": 21
+      },
+      {
+        "dimension": 1,
+        "length": 8,
+        "n": 8,
+        "distance_sum": 28
+      },
+      {
+        "dimension": 1,
+        "length": 9,
+        "n": 9,
+        "distance_sum": 36
+      },
+      {
+        "dimension": 1,
+        "length": 10,
+        "n": 10,
+        "distance_sum": 45
+      },
+      {
+        "dimension": 1,
+        "length": 11,
+        "n": 11,
+        "distance_sum": 55
+      },
+      {
+        "dimension": 1,
+        "length": 12,
+        "n": 12,
+        "distance_sum": 66
+      },
+      {
+        "dimension": 2,
+        "length": 2,
+        "n": 4,
+        "distance_sum": 2
+      },
+      {
+        "dimension": 2,
+        "length": 3,
+        "n": 9,
+        "distance_sum": 9
+      },
+      {
+        "dimension": 2,
+        "length": 4,
+        "n": 16,
+        "distance_sum": 24
+      },
+      {
+        "dimension": 2,
+        "length": 5,
+        "n": 25,
+        "distance_sum": 50
+      },
+      {
+        "dimension": 2,
+        "length": 6,
+        "n": 36,
+        "distance_sum": 90
+      },
+      {
+        "dimension": 2,
+        "length": 7,
+        "n": 49,
+        "distance_sum": 147
+      },
+      {
+        "dimension": 2,
+        "length": 8,
+        "n": 64,
+        "distance_sum": 224
+      },
+      {
+        "dimension": 2,
+        "length": 9,
+        "n": 81,
+        "distance_sum": 324
+      },
+      {
+        "dimension": 2,
+        "length": 10,
+        "n": 100,
+        "distance_sum": 450
+      },
+      {
+        "dimension": 2,
+        "length": 11,
+        "n": 121,
+        "distance_sum": 605
+      },
+      {
+        "dimension": 2,
+        "length": 12,
+        "n": 144,
+        "distance_sum": 792
+      },
+      {
+        "dimension": 3,
+        "length": 2,
+        "n": 8,
+        "distance_sum": 4
+      },
+      {
+        "dimension": 3,
+        "length": 3,
+        "n": 27,
+        "distance_sum": 27
+      },
+      {
+        "dimension": 3,
+        "length": 4,
+        "n": 64,
+        "distance_sum": 96
+      },
+      {
+        "dimension": 3,
+        "length": 5,
+        "n": 125,
+        "distance_sum": 250
+      },
+      {
+        "dimension": 3,
+        "length": 6,
+        "n": 216,
+        "distance_sum": 540
+      },
+      {
+        "dimension": 3,
+        "length": 7,
+        "n": 343,
+        "distance_sum": 1029
+      },
+      {
+        "dimension": 3,
+        "length": 8,
+        "n": 512,
+        "distance_sum": 1792
+      },
+      {
+        "dimension": 3,
+        "length": 9,
+        "n": 729,
+        "distance_sum": 2916
+      },
+      {
+        "dimension": 3,
+        "length": 10,
+        "n": 1000,
+        "distance_sum": 4500
+      },
+      {
+        "dimension": 3,
+        "length": 11,
+        "n": 1331,
+        "distance_sum": 6655
+      },
+      {
+        "dimension": 3,
+        "length": 12,
+        "n": 1728,
+        "distance_sum": 9504
+      }
+    ],
+    "scope": "Exact finite enumeration; asymptotic graph claims require the written proof"
+  },
+  "limits": [
+    "Finite checks do not prove arbitrary-size theorems or certify novelty.",
+    "Random controls are sampled, not an exhaustive optimization.",
+    "No heat, work, gate-synthesis cost, finite-rate reservoir or hardware crossover is tested.",
+    "The full physical register is retained; hidden fresh ancillas, discarded syndrome registers and encoded-only recovery are outside the model."
+  ]
+}

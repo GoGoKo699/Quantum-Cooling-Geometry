@@ -1,0 +1,22 @@
+# Quantum Cooling Geometry
+
+Question: how accurately can a complete noisy physical register be initialized through sparse cold contacts?
+
+Authoritative routes:
+- README.md — question, main bounds, layout figure, reproduction commands and scope.
+- science/README.md — connected scientific reading order.
+- science/model.md — discrete gates–noise–contacts model, reference-sensitive half-diamond error, exact graph and path statements.
+- science/converse.md — selected late complete-depolarization factorization, event counting, shallow-depth argument and control-uniform graph lower bound.
+- science/geometry.md — exact endpoint conveyor error; arbitrary fixed path contacts; optimal contact placement including dense contacts; rectangular slabs with a full cold face.
+- science/interpretation.md — one-port size ceiling, spread versus clustered contacts, and dimensional interpretation.
+- science/noise_and_scope.md — mixed-unitary minorization converse, phase-noise counterexamples, physical-output requirement and timing limits.
+- references/RELATED_WORK.md and references/references.bib — prior one-port cooling, transport, noisy cooling, causal ingredients and exact model comparisons.
+- verification/README.md — commands, finite scopes, output reports and limitations.
+
+Essential distinctions:
+- Every physical qubit remains an output; input-reference decoupling is required.
+- The noise is independent depolarization on all sites every round, including idle sites. Its Bernoulli/Pauli representations are proof devices, not accessible noise flags.
+- Contact operations follow noise, so all-site final reset gives exact zero error.
+- M=sum_v dist(v,S) gives a graph converse, with matching order for all fixed path placements and full-face slabs. No arbitrary-graph upper is claimed.
+- The fixed-placement path optimum is Theta(min(1,pM)) for M>0, with explicit lower and upper constants; exact finite-size optimality is not claimed.
+- Logical-only cooling, sacrificial workspace, bulk measurements, continuous-time bounded-control limits, heat/work costs and quantum advantage are not established.
