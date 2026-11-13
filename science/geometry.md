@@ -37,7 +37,7 @@ The empty product for $`\ell=1`$ is one. In particular,
 ```
 For a fixed endpoint contact, $`M=\ell(\ell-1)/2`$. The [graph converse](converse.md) and (6) establish
 ```math
-\inf_{T,\Phi_T}\epsilon(\Phi_T,0^{\otimes\ell})
+\inf_{T,\Phi_T}\epsilon(\Phi_T)
 =\Theta\!\left(\min\{1,p\ell(\ell-1)\}\right)
 ```
 uniformly for $`\ell\ge2`$ and $`0\le p\le1`$, with universal constants. The known-gate depth of the upper is $`2\ell-1`$; its gates, reset count, and noise exposure are explicit. No compression oracle or ideal bulk correction is used.
@@ -49,7 +49,7 @@ The distance-sum converse also has a matching upper for every nonempty fixed con
 **Theorem 4 — fixed path placement.** For every $`\varnothing\ne S\subseteq V(P_n)`$, let $`M=M(P_n,S)`$. Then
 ```math
 \frac{1-(1-p)^M}{2}
-\le\inf_{T,\Phi_T}\epsilon(\Phi_T,0^{\otimes n})
+\le\inf_{T,\Phi_T}\epsilon(\Phi_T)
 \le\min\{1,pM\}.
 \tag{7a}
 ```
@@ -57,7 +57,7 @@ For $`M\ge1`$ this is $`\Theta(\min\{1,pM\})`$ with universal constants. For $`M
 
 **Proof of the upper.** Partition the path into contiguous nearest-contact cells, breaking ties consistently. Each cell contains exactly one contact, at any position in that cell. Its contribution $`M_{\rm cell}`$ to $`M`$ is its sum of distances to that contact.
 
-Within this cell apply the same odd/even full-cell SWAP brickwork as above, but reset its actual contact position. Run $`2a`$ rounds. Every original carrier visits every site during a period of $`2a`$ rounds, so it visits the contact and is discarded. This visitation property can be seen by unfolding the bouncing trajectory into a cycle of length $`2a`$: the position function on phases $`z=0,\ldots,2a-1`$ is
+Let $`a`$ be the number of vertices in this cell. Apply the same odd/even full-cell SWAP brickwork as above, but reset its actual contact position. Run $`2a`$ rounds. Every original carrier visits every site during a period of $`2a`$ rounds, so it visits the contact and is discarded. This visitation property can be seen by unfolding the bouncing trajectory into a cycle of length $`2a`$: the position function on phases $`z=0,\ldots,2a-1`$ is
 ```math
 f(z)=1+\min\{z,2a-1-z\}.
 ```
@@ -129,7 +129,7 @@ Define the best error with $`m`$ freely placed contacts by
 ```math
 \epsilon^*_{n,m}(p)
 =\inf_{|S|=m}\inf_{T,\Phi_T}
-\epsilon(\Phi_T,0^{\otimes n}).
+\epsilon(\Phi_T).
 ```
 
 **Theorem 6 — path contact-accuracy frontier.** For every $`n,m,p`$ in the stated domains,

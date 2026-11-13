@@ -53,7 +53,7 @@ The odd/even conveyor applies SWAPs on edges `(1,2),(3,4),…` in its first roun
 
 The Choi calculation checks full replacement and reference decoupling; the exact error identity then follows because the replacement output is diagonal and the target is pure. No numerical diamond-norm optimization is claimed.
 
-For arbitrary fixed ports on a line, the construction partitions the line into contiguous nearest-port cells, breaking a distance tie toward the left port. Each cell runs the alternating SWAP pattern with its **actual** reset port, which can lie in its interior. All cells finish at the common time `2 max(cell length)−1`. The finite trajectory checks confirm
+For arbitrary fixed ports on a line, the construction partitions the line into contiguous nearest-port cells, breaking a distance tie toward the left port. Each cell runs the alternating SWAP pattern with its **actual** reset port, which can lie in its interior. The finite trajectory test finishes all cells at the common time `2 max(cell length)−1`. The analytical fixed-placement construction uses the safe full-period depth `2 max(cell length)`; its age bound holds at either late parity, and both finishing conventions are checked in the carrier diagnostics. The finite trajectory checks confirm
 
 ```math
 \sum_v a_v\leq2\sum_v\operatorname{dist}(v,S),
