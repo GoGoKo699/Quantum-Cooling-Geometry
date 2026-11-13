@@ -1,0 +1,621 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 3,
+      "source_sha256": "8a8c61d712be634a0ca3a1c8e8c6c529e11d6186ee5b5b591be38edf6d6c48ec",
+      "expected_text": "\n  M\n  =\n  \n    \u2211\n    v\n  \n  \n    dist\n  \n  (\n  v\n  ,\n  S\n  )\n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "README.md",
+      "index": 4,
+      "source_sha256": "8d4df0b2cfc681f81e977cb459f75712819ba747b00de21d0d008c14bdeaae2e",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \n                1\n                \u2212\n                (\n                1\n                \u2212\n                p\n                \n                  )\n                  M\n                \n              \n              2\n            \n            \u2264\n            \n              \u03f5\n              \u2217\n            \n            \u2264\n            min\n            {\n            1\n            ,\n            p\n            M\n            }\n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "README.md",
+      "index": 11,
+      "source_sha256": "b796bdf50ba29ca216162ec3dafe22539e8684e6b0f274f63961a7ee8a0416c2",
+      "expected_text": "\n  m\n  <\n  n\n",
+      "required_text": []
+    },
+    {
+      "path": "verification/README.md",
+      "index": 1,
+      "source_sha256": "37355885d9fd0c8a7eacf618aaef9c347891935edd84214d0383ced2c1b244e6",
+      "expected_text": "\n  \n    M\n    T\n  \n  =\n  \n    \u2211\n    \n      j\n      =\n      1\n    \n    \n      n\n    \n  \n  min\n  {\n  T\n  ,\n  j\n  \u2212\n  1\n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "verification/README.md",
+      "index": 2,
+      "source_sha256": "155b2b18309286452ef1c045d8d3649a06784f9b0a9e885a27724cf0ed00cd65",
+      "expected_text": "\n  \n    \u03bb\n    \n      max\n    \n  \n  (\n  \n    \u03c1\n    \n      o\n      u\n      t\n    \n  \n  )\n  \u2264\n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          \n            M\n            T\n          \n        \n      \n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "verification/README.md",
+      "index": 3,
+      "source_sha256": "0abf138376986e60e09a751fe880a3a5927a04a9abeb9dd59f1cb579fd3d78e0",
+      "expected_text": "\n  \n    \u03f5\n    \n      c\n      o\n      n\n      v\n    \n  \n  =\n  1\n  \u2212\n  \n    \u220f\n    \n      k\n      =\n      1\n    \n    \n      n\n      \u2212\n      1\n    \n  \n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          2\n          k\n          \u2212\n          1\n        \n      \n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "verification/README.md",
+      "index": 4,
+      "source_sha256": "f2c0d998c391761babe27f16faf1581ae13b0bc20ed28f01f6020ebc0dd94261",
+      "expected_text": "\n  \n    \u2211\n    v\n  \n  \n    a\n    v\n  \n  \u2264\n  2\n  \n    \u2211\n    v\n  \n  \n    dist\n  \n  (\n  v\n  ,\n  S\n  )\n  ,\n  \n    \n  \n  \n    \u03f5\n    \n      c\n      o\n      n\n      v\n    \n  \n  \u2264\n  p\n  \n    \u2211\n    v\n  \n  \n    dist\n  \n  (\n  v\n  ,\n  S\n  )\n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "references/RELATED_WORK.md",
+      "index": 1,
+      "source_sha256": "384d672d91781be9920ef6b6804e0fe02fef7c64a395885dd45f984f75e81324",
+      "expected_text": "\n  M\n  (\n  G\n  ,\n  S\n  )\n  =\n  \n    \u2211\n    \n      v\n      \u2208\n      V\n    \n  \n  d\n  (\n  v\n  ,\n  S\n  )\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 3,
+      "source_sha256": "cfbe20ab690b75e21a80db0d3155420477124917862c0e271ab34b11fe2adb0f",
+      "expected_text": "\n  \n    \n      R\n    \n    0\n  \n  (\n  X\n  )\n  =\n  \n    Tr\n  \n  (\n  X\n  )\n  |\n  \n    0\n    n\n  \n  \u27e9\n  \u27e8\n  \n    0\n    n\n  \n  |\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 4,
+      "source_sha256": "6f0fd32f4a5029ba81c825cd797339779ec12c40822552b3a036d80db21159f0",
+      "expected_text": "\n  \n    \n      D\n    \n    p\n  \n  =\n  (\n  1\n  \u2212\n  p\n  )\n  \n    id\n  \n  +\n  p\n  \n    E\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 9,
+      "source_sha256": "7450673ee5e77c71828fe1949a44cae6e093c8d35e7a8a4502b9d61879737764",
+      "expected_text": "\n  T\n  \u2212\n  t\n  <\n  \n    d\n    v\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/MILESTONES.md",
+      "index": 15,
+      "source_sha256": "b82e87c4a475283b123d297d1bb5b672d6c3d87bb442c416e7c8d48d52bec57c",
+      "expected_text": "\n  T\n  <\n  R\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 2,
+      "source_sha256": "b5deeb03d9ddd1418e80959f9eb3f6fe86fc8badd8c41384fa35cfa1352d7f2d",
+      "expected_text": "\n  \n    \n      Ad\n    \n    U\n  \n  (\n  X\n  )\n  =\n  U\n  X\n  \n    U\n    \u2020\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 6,
+      "source_sha256": "d150cc6ad6872d030e4e73c4821eadb2f8b09ffb2432920f475fad2be30f1f50",
+      "expected_text": "\n  \n    \n      R\n    \n    0\n  \n  (\n  X\n  )\n  =\n  \n    Tr\n  \n  (\n  X\n  )\n  |\n  \n    0\n    n\n  \n  \u27e9\n  \u27e8\n  \n    0\n    n\n  \n  |\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 8,
+      "source_sha256": "97556204d5b3fc3b5ee6aea7561b38bab4e22a5d6a8caf451392bcdd7fb6c974",
+      "expected_text": "\n  D\n  (\n  \u03c1\n  ,\n  \u03c3\n  )\n  =\n  \n    1\n    2\n  \n  \u2016\n  \u03c1\n  \u2212\n  \u03c3\n  \n    \u2016\n    1\n  \n  ,\n  \n    \n  \n  \u03f5\n  (\n  \u03a8\n  )\n  =\n  \n    1\n    2\n  \n  \u2016\n  \u03a8\n  \u2212\n  \n    \n      R\n    \n    0\n  \n  \n    \u2016\n    \u22c4\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 9,
+      "source_sha256": "90fb31d0e056514d30e91f8ffe20893b89afced5a4aee22ed44ff86a7e9a206d",
+      "expected_text": "\n  \u2016\n  \u22c5\n  \n    \u2016\n    \u22c4\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 11,
+      "source_sha256": "880de1aba205e8219d8d28ea279c410574d326d1a9aa2db29d1c1e94f52f4ed5",
+      "expected_text": "\n  \n    1\n    2\n  \n  \n    \n      \u2016\n      (\n      \u03a8\n      \u2297\n      \n        \n          id\n        \n        A\n      \n      )\n      (\n      \n        \u03c1\n        \n          V\n          A\n        \n      \n      )\n      \u2212\n      |\n      \n        0\n        n\n      \n      \u27e9\n      \u27e8\n      \n        0\n        n\n      \n      |\n      \u2297\n      \n        \u03c1\n        A\n      \n      \u2016\n    \n    1\n  \n  \u2264\n  \u03f5\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 13,
+      "source_sha256": "6962b781f20999e1448f47d507c675aca9c8648d2518642be0673e09bb9db6d2",
+      "expected_text": "\n  \n    \u03c1\n    A\n  \n  =\n  \n    \n      Tr\n    \n    V\n  \n  \n    \u03c1\n    \n      V\n      A\n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 15,
+      "source_sha256": "d89ec9a1797b6e4f9a67a55dec8412c056c696475a3967213b0a6dae04bd640c",
+      "expected_text": "\n  D\n  (\n  \u03c1\n  ,\n  |\n  \n    0\n    n\n  \n  \u27e9\n  \u27e8\n  \n    0\n    n\n  \n  |\n  )\n  \u2265\n  1\n  \u2212\n  \n    f\n    0\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 16,
+      "source_sha256": "933103dd74f2e374a21247d152d2b0af773f91a851f224134c78b44d3a44141a",
+      "expected_text": "\n  \n    \n      D\n    \n    p\n  \n  =\n  (\n  1\n  \u2212\n  p\n  )\n  \n    \n  \n  \n    id\n  \n  +\n  p\n  \n    \n  \n  \n    E\n  \n  ,\n  \n    \n  \n  \n    E\n  \n  (\n  X\n  )\n  =\n  \n    Tr\n  \n  (\n  X\n  )\n  \n    I\n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 28,
+      "source_sha256": "247ce3e7d959a02ee8dc7f48c448d0c49a162763a5402e4c32fc15e49ab48395",
+      "expected_text": "\n  M\n  =\n  \n    d\n    1\n  \n  +\n  \n    d\n    2\n  \n  +\n  \n    d\n    3\n  \n  =\n  3.\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 30,
+      "source_sha256": "8649d866e008d96e33a3c3a49b34138fa26609fae57c6b15f177867bb76762e2",
+      "expected_text": "\n  W\n  \n    (\n    \n      I\n      2\n    \n    \u2297\n    \u03c4\n    )\n  \n  \n    W\n    \u2020\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 35,
+      "source_sha256": "4df8b7f00c9af495de870540a272be4d7f38cf76867798ed02f2d7e972c32d37",
+      "expected_text": "\n  \n    f\n    0\n  \n  \u2264\n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      \n        )\n        3\n      \n    \n    2\n  \n  ,\n  \n    \n  \n  \u03f5\n  \u2265\n  \n    \n      1\n      \u2212\n      (\n      1\n      \u2212\n      p\n      \n        )\n        3\n      \n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 36,
+      "source_sha256": "ba3ec52c40129f267a1931e167ef7fee19304e7bc106782286b4235ba2a79663",
+      "expected_text": "\n  T\n  <\n  2\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 55,
+      "source_sha256": "ab91bf6832a775699482ec3e9e77a24a0d8dccbb6acfef7bfc47e183b9d5ef6a",
+      "expected_text": "\n  \n    \u03c1\n    a\n  \n  =\n  \n    1\n    2\n  \n  \n    [\n    I\n    +\n    (\n    1\n    \u2212\n    p\n    \n      )\n      a\n    \n    Z\n    ]\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 57,
+      "source_sha256": "2bd757245a51c5129e5bc24245edf07a8b78a1126583c8221a245aafdfaba828",
+      "expected_text": "\n  \n    f\n    \n      0\n      ,\n      \n        conv\n      \n    \n  \n  =\n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      )\n    \n    2\n  \n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      \n        )\n        3\n      \n    \n    2\n  \n  ,\n  \n    \n  \n  \n    \u03f5\n    \n      \n        conv\n      \n    \n  \n  =\n  1\n  \u2212\n  \n    f\n    \n      0\n      ,\n      \n        conv\n      \n    \n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 62,
+      "source_sha256": "f61b3ed889ebd0e7e0c38a86626ceaa7f2cc8009a3fdbae9bc7c2622aa2d6ae0",
+      "expected_text": "\n  0.1355\n  \u2264\n  \n    \u03f5\n    \u2217\n  \n  (\n  \n    P\n    3\n  \n  ,\n  {\n  1\n  }\n  ,\n  0.1\n  )\n  \u2264\n  \n    \u03f5\n    \n      \n        conv\n      \n    \n  \n  =\n  1\n  \u2212\n  (\n  0.95\n  )\n  (\n  0.8645\n  )\n  =\n  0.178725\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 65,
+      "source_sha256": "ff272535461508e66e6c5a669759e7c46bc5897cbac9666c68415f330bcc43d8",
+      "expected_text": "\n  \n    d\n    v\n  \n  =\n  \n    dist\n  \n  (\n  v\n  ,\n  S\n  )\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 68,
+      "source_sha256": "7450673ee5e77c71828fe1949a44cae6e093c8d35e7a8a4502b9d61879737764",
+      "expected_text": "\n  T\n  \u2212\n  t\n  <\n  \n    d\n    v\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 69,
+      "source_sha256": "668a79ffbd2bd837c7deb34daec822fb31a575abd8710af85e30eb806af516de",
+      "expected_text": "\n  \n    M\n    T\n  \n  =\n  \n    \u2211\n    v\n  \n  min\n  {\n  T\n  ,\n  \n    d\n    v\n  \n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 72,
+      "source_sha256": "cd0bb778abc26d71e9f8c2df6961e8ec026a2a953bcbd7d2eb54b7abda222887",
+      "expected_text": "\n  \n    \u03f5\n    \u2217\n  \n  (\n  G\n  ,\n  S\n  ,\n  p\n  )\n  \u2265\n  \n    \n      1\n      \u2212\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          M\n          (\n          G\n          ,\n          S\n          )\n        \n      \n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/interpretation.md",
+      "index": 1,
+      "source_sha256": "2dbd6f6c8c4869ab03e94314c225ebae4a2d6794533c196ef2ee42cbe7413961",
+      "expected_text": "\n  M\n  (\n  \n    P\n    n\n  \n  ,\n  S\n  )\n  =\n  \n    \u2211\n    \n      v\n      =\n      1\n    \n    n\n  \n  \n    dist\n  \n  (\n  v\n  ,\n  S\n  )\n  ,\n  \n    \n  \n  \n    \u03f5\n    \u2217\n  \n  \u224d\n  min\n  {\n  1\n  ,\n  p\n  M\n  (\n  \n    P\n    n\n  \n  ,\n  S\n  )\n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/interpretation.md",
+      "index": 5,
+      "source_sha256": "21195a2369542f49510455f8bf68388b3c4d9b875d19d35171bcb1f846526d50",
+      "expected_text": "\n  M\n  =\n  0\n  +\n  1\n  +\n  \u22ef\n  +\n  (\n  n\n  \u2212\n  1\n  )\n  =\n  \n    \n      n\n      (\n      n\n      \u2212\n      1\n      )\n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/interpretation.md",
+      "index": 20,
+      "source_sha256": "2377a9667984cbc9c2bf85ca732a0ad416cc063f70788b1d0a624bea14bb06ee",
+      "expected_text": "\n  M\n  =\n  1\n  +\n  2\n  +\n  \u22ef\n  +\n  m\n  =\n  \n    \n      m\n      (\n      m\n      +\n      1\n      )\n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/interpretation.md",
+      "index": 24,
+      "source_sha256": "d7ba6f3cf051790fa4c1d8f9b1d05fd87de7e4263e33be12f8d2d63c6243a7e0",
+      "expected_text": "\n  \n    M\n    \n      n\n      ,\n      m\n    \n    \n      min\n    \n  \n  \u224d\n  \n    \n      n\n      (\n      n\n      \u2212\n      m\n      )\n    \n    m\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/interpretation.md",
+      "index": 30,
+      "source_sha256": "4bde33c29d44e26b3572e1bff664bec0d1631d4a2c3e9acd0628caaeb8490256",
+      "expected_text": "\n  M\n  =\n  A\n  \n    \n      L\n      (\n      L\n      \u2212\n      1\n      )\n    \n    2\n  \n  =\n  \n    \n      N\n      (\n      L\n      \u2212\n      1\n      )\n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 1,
+      "source_sha256": "4591fc7536eb2c8ba0ccf8e3ba9048ba018faf14c42d897e89b7e921b53e5ec9",
+      "expected_text": "\n  \n    \n      E\n    \n    v\n  \n  (\n  X\n  )\n  =\n  \n    1\n    4\n  \n  \n    \u2211\n    \n      P\n      \u2208\n      {\n      I\n      ,\n      X\n      ,\n      Y\n      ,\n      Z\n      }\n    \n  \n  \n    P\n    v\n  \n  X\n  \n    P\n    v\n    \u2020\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 5,
+      "source_sha256": "f30b40bf0845b81507ae283a14a9af2d92f562aba205c0cbfba3b541741bb1b3",
+      "expected_text": "\n  \n    \n      Ad\n    \n    U\n  \n  \u2218\n  \n    E\n  \n  \u2218\n  \n    \n      Ad\n    \n    \n      \n        U\n        \u2020\n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 7,
+      "source_sha256": "761cebb27580ed05087851ad990e949902824a0503916ae705672a1539b38b5f",
+      "expected_text": "\n  \n    \u03c1\n    \n      \n        out\n      \n    \n  \n  =\n  W\n  \n    (\n    \n      \n        I\n        v\n      \n      2\n    \n    \u2297\n    \n      \u03c4\n      \n        V\n        \u2216\n        {\n        v\n        }\n      \n    \n    )\n  \n  \n    W\n    \u2020\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 10,
+      "source_sha256": "a32051b5239ef5087ee17c4ec74257cd16a6219c74497b77a525655344976f91",
+      "expected_text": "\n  \u2016\n  \n    \u03c1\n    \n      \n        out\n      \n    \n  \n  \n    \u2016\n    \u221e\n  \n  \u2264\n  \n    1\n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 16,
+      "source_sha256": "7d7a9c1c70a2f9eec6a561e878cadd2ac3a81e18055e4d4a617c11306d7f08db",
+      "expected_text": "\n  T\n  \u2212\n  t\n  <\n  \n    d\n    v\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 17,
+      "source_sha256": "58e0518da75911441d03562a0002bb036cb1bb7535c7767865bd2219ffe315c2",
+      "expected_text": "\n  \n    \n      L\n    \n    T\n  \n  =\n  {\n  (\n  v\n  ,\n  t\n  )\n  :\n  1\n  \u2264\n  t\n  \u2264\n  T\n  ,\n  \u00a0\n  T\n  \u2212\n  t\n  <\n  \n    d\n    v\n  \n  }\n  ,\n  \n    \n  \n  \n    M\n    T\n  \n  =\n  |\n  \n    \n      L\n    \n    T\n  \n  |\n  =\n  \n    \u2211\n    v\n  \n  min\n  {\n  T\n  ,\n  \n    d\n    v\n  \n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 22,
+      "source_sha256": "fe0a3d6402cc5353255a2736c9440cba7c9d2ab2978e0e336af160e753423280",
+      "expected_text": "\n  Pr\n  (\n  A\n  )\n  =\n  1\n  \u2212\n  (\n  1\n  \u2212\n  p\n  \n    )\n    \n      \n        M\n        T\n      \n    \n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 26,
+      "source_sha256": "5867028c1209a49dd61a924897d0a3278fd889437e4f65b26a1b73dcc78205d3",
+      "expected_text": "\n  \u27e8\n  \u03c8\n  |\n  \n    \u03a8\n    T\n  \n  (\n  \u03c1\n  )\n  |\n  \u03c8\n  \u27e9\n  \u2264\n  (\n  1\n  \u2212\n  Pr\n  (\n  A\n  )\n  )\n  +\n  \n    1\n    2\n  \n  Pr\n  (\n  A\n  )\n  =\n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          \n            M\n            T\n          \n        \n      \n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 29,
+      "source_sha256": "a4e940b7f3905dcbd6baab6770da336d5c7472dddac7cb704cfe10c266714100",
+      "expected_text": "\n  \n    1\n    2\n  \n  \u2016\n  \n    \u03a8\n    T\n  \n  (\n  \u03c1\n  )\n  \u2212\n  |\n  \n    0\n    n\n  \n  \u27e9\n  \u27e8\n  \n    0\n    n\n  \n  |\n  \n    \u2016\n    1\n  \n  \u2265\n  1\n  \u2212\n  \u27e8\n  \n    0\n    n\n  \n  |\n  \n    \u03a8\n    T\n  \n  (\n  \u03c1\n  )\n  |\n  \n    0\n    n\n  \n  \u27e9\n  \u2265\n  \n    \n      1\n      \u2212\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          \n            M\n            T\n          \n        \n      \n    \n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 32,
+      "source_sha256": "b82e87c4a475283b123d297d1bb5b672d6c3d87bb442c416e7c8d48d52bec57c",
+      "expected_text": "\n  T\n  <\n  R\n",
+      "required_text": []
+    },
+    {
+      "path": "science/converse.md",
+      "index": 41,
+      "source_sha256": "3454b1fba130a23ddf10c5bde2b740c12be957f2baace7d60747f23fe4ceb752",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \u03f5\n            (\n            \n              \u03a8\n              T\n            \n            )\n            \u2265\n            \n              \n                1\n                \u2212\n                (\n                1\n                \u2212\n                p\n                \n                  )\n                  \n                    M\n                    (\n                    G\n                    ,\n                    S\n                    )\n                  \n                \n              \n              2\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/noise_and_scope.md",
+      "index": 1,
+      "source_sha256": "768c0a5b9126f323aa44c106ee9297d9453a200540e8a1902ae4df9f69a4fec5",
+      "expected_text": "\n  \n    \n      N\n    \n    \n      v\n      ,\n      t\n    \n  \n  =\n  \n    a\n    \n      v\n      ,\n      t\n    \n  \n  \n    \n      E\n    \n    v\n  \n  +\n  (\n  1\n  \u2212\n  \n    a\n    \n      v\n      ,\n      t\n    \n  \n  )\n  \n    \n      U\n    \n    \n      v\n      ,\n      t\n    \n  \n  ,\n  \n    \n  \n  0\n  \u2264\n  \n    a\n    \n      v\n      ,\n      t\n    \n  \n  \u2264\n  1\n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "science/noise_and_scope.md",
+      "index": 3,
+      "source_sha256": "c8ca4ae7b2c97e1cacee5063bfcfe1f9fe42c1f6016bdf3f1e414182a458ff69",
+      "expected_text": "\n  \u03f5\n  (\n  \n    \u03a8\n    T\n  \n  )\n  \u2265\n  \n    1\n    2\n  \n  \n    [\n    1\n    \u2212\n    \n      \u220f\n      \n        (\n        v\n        ,\n        t\n        )\n        \u2208\n        \n          \n            L\n          \n          T\n        \n      \n    \n    (\n    1\n    \u2212\n    \n      a\n      \n        v\n        ,\n        t\n      \n    \n    )\n    ]\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/noise_and_scope.md",
+      "index": 7,
+      "source_sha256": "a094937a5b8d8b97f52f1a67e7ec85cd42175af75f2af77304a299abe93ad8ad",
+      "expected_text": "\n  \n    P\n  \n  (\n  \u03c1\n  )\n  =\n  \n    \u2211\n    \n      P\n      \u2208\n      {\n      I\n      ,\n      X\n      ,\n      Y\n      ,\n      Z\n      }\n    \n  \n  \n    q\n    P\n  \n  P\n  \u03c1\n  \n    P\n    \u2020\n  \n  ,\n  \n    \n  \n  \n    q\n    P\n  \n  \u2265\n  0\n  ,\n  \n    \n  \n  \n    \u2211\n    P\n  \n  \n    q\n    P\n  \n  =\n  1.\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 7,
+      "source_sha256": "d36b8aaaf6b39a750250c256a4af67592b49534ba7fd3da0552d0a34e415f41a",
+      "expected_text": "\n  {\n  0\n  ,\n  1\n  ,\n  3\n  ,\n  5\n  ,\n  \u2026\n  ,\n  2\n  \u2113\n  \u2212\n  3\n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 17,
+      "source_sha256": "b2356d486a684d07ef76335c69c6c71d15b3ffd4fde9e8f4f2badbf10e96bb88",
+      "expected_text": "\n  \n    \u03c1\n    a\n  \n  =\n  \n    1\n    2\n  \n  \n    [\n  \n  I\n  +\n  (\n  1\n  \u2212\n  p\n  \n    )\n    a\n  \n  Z\n  \n    ]\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 18,
+      "source_sha256": "b3c8b877dea1529e3646a3ca994d5adc937fe94401b38f9ef98864b96d87fbf8",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \u03f5\n              \n                c\n                o\n                n\n                v\n              \n            \n            (\n            \u2113\n            ,\n            p\n            )\n            =\n            1\n            \u2212\n            \n              \u220f\n              \n                k\n                =\n                1\n              \n              \n                \u2113\n                \u2212\n                1\n              \n            \n            \n              \n                1\n                +\n                (\n                1\n                \u2212\n                p\n                \n                  )\n                  \n                    2\n                    k\n                    \u2212\n                    1\n                  \n                \n              \n              2\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 20,
+      "source_sha256": "c0577b81b5a689167ecc42dbd3b8f24a505f2fe3a0e6efe9b2063a667c356389",
+      "expected_text": "\n  \n    \u03f5\n    \n      c\n      o\n      n\n      v\n    \n  \n  (\n  \u2113\n  ,\n  p\n  )\n  \u2264\n  \n    p\n    2\n  \n  \n    \u2211\n    \n      k\n      =\n      1\n    \n    \n      \u2113\n      \u2212\n      1\n    \n  \n  (\n  2\n  k\n  \u2212\n  1\n  )\n  =\n  \n    p\n    2\n  \n  (\n  \u2113\n  \u2212\n  1\n  \n    )\n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 22,
+      "source_sha256": "153917a6388ac972725f86365ab0c78ef3cd966fdfa5a324f11891f414c04335",
+      "expected_text": "\n  \n    inf\n    \n      T\n      ,\n      \n        \u03a6\n        T\n      \n    \n  \n  \u03f5\n  (\n  \n    \u03a6\n    T\n  \n  )\n  =\n  \u0398\n  \n    \n  \n  \n    (\n    min\n    {\n    1\n    ,\n    p\n    \u2113\n    (\n    \u2113\n    \u2212\n    1\n    )\n    }\n    )\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 28,
+      "source_sha256": "82e1122a4a0d877f26c23bde38af4cfeb91617c2ff30c52e407d5c9efa294337",
+      "expected_text": "\n  \n    \n      1\n      \u2212\n      (\n      1\n      \u2212\n      p\n      \n        )\n        M\n      \n    \n    2\n  \n  \u2264\n  \n    inf\n    \n      T\n      ,\n      \n        \u03a6\n        T\n      \n    \n  \n  \u03f5\n  (\n  \n    \u03a6\n    T\n  \n  )\n  \u2264\n  min\n  {\n  1\n  ,\n  p\n  M\n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 39,
+      "source_sha256": "e6f89f35f76f061ce054e2d603d17e5446077a2878cffbb58c58829dbe520fd4",
+      "expected_text": "\n  f\n  (\n  z\n  )\n  =\n  1\n  +\n  min\n  {\n  z\n  ,\n  2\n  a\n  \u2212\n  1\n  \u2212\n  z\n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 50,
+      "source_sha256": "cd91f65887b960bed18e4975f34060f5f48014fcffad12ade414aab7e2dfbe5c",
+      "expected_text": "\n  \n    \u2211\n    \n      x\n      =\n      1\n    \n    b\n  \n  \n    age\n  \n  (\n  x\n  )\n  =\n  \n    \n      b\n      (\n      b\n      +\n      1\n      )\n    \n    2\n  \n  +\n  \n    \u2211\n    \n      x\n      \u2208\n      P\n    \n  \n  (\n  2\n  b\n  +\n  1\n  \u2212\n  2\n  x\n  )\n  \u2208\n  {\n  \n    b\n    2\n  \n  ,\n  b\n  (\n  b\n  +\n  1\n  )\n  }\n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 56,
+      "source_sha256": "69e6c0cda4f482cd8cf40f7bcceb33d111c09caeb5cfb04f772a7cb43caf4fea",
+      "expected_text": "\n  \n    \u2211\n    \n      final carriers\n    \n  \n  \n    age\n  \n  \u2264\n  2\n  \n    \u2211\n    \n      v\n      \u2208\n      \n        cell\n      \n    \n  \n  d\n  (\n  v\n  ,\n  \n    contact\n  \n  )\n  =\n  2\n  \n    M\n    \n      c\n      e\n      l\n      l\n    \n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 65,
+      "source_sha256": "c35e3ff9d7f4a0dccc4f16025d5df4e6c09089c4e1c4d3a8d2c9e318395f6fc5",
+      "expected_text": "\n  n\n  =\n  q\n  m\n  +\n  r\n  ,\n  \n    \n  \n  q\n  =\n  \u230a\n  n\n  \n    /\n  \n  m\n  \u230b\n  ,\n  \n    \n  \n  0\n  \u2264\n  r\n  <\n  m\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 66,
+      "source_sha256": "16c31bd404977571c0dc51fb1144090e0cc05919504eaa7f035333fa01ee260c",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              M\n              \n                n\n                ,\n                m\n              \n              \n                min\n              \n            \n            =\n            (\n            m\n            \u2212\n            r\n            )\n            \n              \u230a\n              \n                \n                  q\n                  2\n                \n                4\n              \n              \u230b\n            \n            +\n            r\n            \n              \u230a\n              \n                \n                  (\n                  q\n                  +\n                  1\n                  \n                    )\n                    2\n                  \n                \n                4\n              \n              \u230b\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 72,
+      "source_sha256": "3df47fced7c2ac753f8a3fee8aab1f9ca702ead45e79e23ed6a1cd2a193f301a",
+      "expected_text": "\n  g\n  (\n  a\n  )\n  =\n  \n    \u230a\n    \n      \n        a\n        2\n      \n      4\n    \n    \u230b\n  \n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 76,
+      "source_sha256": "9461edde40dba04afcd0c02123813f973b2267ca0d787c154288b479369fce41",
+      "expected_text": "\n  g\n  (\n  a\n  +\n  1\n  )\n  \u2212\n  g\n  (\n  a\n  )\n  =\n  \n    \u2308\n    \n      a\n      2\n    \n    \u2309\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 79,
+      "source_sha256": "8804c746909b355c143670f73bf5720066661fe2fa42f8a0c1488ee6bdac28ed",
+      "expected_text": "\n  \n    M\n    \n      n\n      ,\n      m\n    \n    \n      min\n    \n  \n  =\n  n\n  \u2212\n  m\n  \n    \n  \n  when\u00a0\n  m\n  \u2265\n  \u2308\n  n\n  \n    /\n  \n  2\n  \u2309\n  ,\n  \n    \n  \n  \n    M\n    \n      n\n      ,\n      n\n    \n    \n      min\n    \n  \n  =\n  0.\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 81,
+      "source_sha256": "b28746707dd9b7663727796c3900def68ea9a94e88b83915f92ad487cfa23f21",
+      "expected_text": "\n  \n    1\n    4\n  \n  \n    C\n    \n      n\n      ,\n      m\n    \n  \n  \u2264\n  \n    M\n    \n      n\n      ,\n      m\n    \n    \n      min\n    \n  \n  \u2264\n  \n    C\n    \n      n\n      ,\n      m\n    \n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 88,
+      "source_sha256": "8d35ffd7978759c9524b63b979a12f28dc958f31a35f85ad24ac2b0bf4da47d2",
+      "expected_text": "\n  \n    \u03f5\n    \n      n\n      ,\n      m\n    \n    \u2217\n  \n  (\n  p\n  )\n  =\n  \n    inf\n    \n      |\n      S\n      |\n      =\n      m\n    \n  \n  \n    inf\n    \n      T\n      ,\n      \n        \u03a6\n        T\n      \n    \n  \n  \u03f5\n  (\n  \n    \u03a6\n    T\n  \n  )\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 90,
+      "source_sha256": "9e6fa06ec479bf27046ed9bfca24b31db7428c019236adcd8abc300e0495791c",
+      "expected_text": "\n  \n    \n      1\n      \u2212\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          \n            M\n            \n              n\n              ,\n              m\n            \n            \n              min\n            \n          \n        \n      \n    \n    2\n  \n  \u2264\n  \n    \u03f5\n    \n      n\n      ,\n      m\n    \n    \u2217\n  \n  (\n  p\n  )\n  \u2264\n  min\n  {\n  1\n  ,\n  p\n  \n    M\n    \n      n\n      ,\n      m\n    \n    \n      min\n    \n  \n  }\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 91,
+      "source_sha256": "b796bdf50ba29ca216162ec3dafe22539e8684e6b0f274f63961a7ee8a0416c2",
+      "expected_text": "\n  m\n  <\n  n\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 92,
+      "source_sha256": "12116339e5dd7e9ef7f6d61bfd26567f55acf940d5569289f2a3dcbfc04de92c",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \u03f5\n              \n                n\n                ,\n                m\n              \n              \u2217\n            \n            (\n            p\n            )\n            =\n            \u0398\n            \n              \n            \n            \n              (\n              min\n              \n                {\n                1\n                ,\n                p\n                \n                  \n                \n                \n                  \n                    n\n                    (\n                    n\n                    \u2212\n                    m\n                    )\n                  \n                  m\n                \n                }\n              \n              )\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 97,
+      "source_sha256": "6ff3e7c10fe4c7ddc9dd7e1f71273c572fc83f0369aab8ab26245b6cd021209c",
+      "expected_text": "\n  \n    F\n    \n      c\n      e\n      l\n      l\n      s\n    \n  \n  =\n  \n    \u220f\n    \n      v\n      \u2208\n      V\n    \n  \n  \n    \n      1\n      +\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          \n            a\n            v\n          \n        \n      \n    \n    2\n  \n  ,\n  \n    \n  \n  \n    \u2211\n    v\n  \n  \n    a\n    v\n  \n  \u2264\n  2\n  \n    M\n    \n      n\n      ,\n      m\n    \n    \n      min\n    \n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 106,
+      "source_sha256": "9f2167a3652bdfdc8fb3cce4cb8a56b4b199ccf8a0992087607f03344e436342",
+      "expected_text": "\n  G\n  =\n  \n    P\n    L\n  \n  \n    \u25fb\n  \n  \n    P\n    \n      \n        L\n        2\n      \n    \n  \n  \n    \u25fb\n  \n  \u22ef\n  \n    \u25fb\n  \n  \n    P\n    \n      \n        L\n        d\n      \n    \n  \n  ,\n  \n    \n  \n  A\n  =\n  \n    \u220f\n    \n      j\n      =\n      2\n    \n    d\n  \n  \n    L\n    j\n  \n  ,\n  \n    \n  \n  N\n  =\n  A\n  L\n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 113,
+      "source_sha256": "a4f24ac07487d20f4eaf43c654a6e4c53b0aa60852ff2108c06347e00f1b440e",
+      "expected_text": "\n  \n    \n      \n        \n          \n            M\n            (\n            G\n            ,\n            S\n            )\n            =\n            A\n            \n              \n                L\n                (\n                L\n                \u2212\n                1\n                )\n              \n              2\n            \n            =\n            \n              \n                N\n                (\n                L\n                \u2212\n                1\n                )\n              \n              2\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 117,
+      "source_sha256": "06afff9df1e977d9a44112b116bafecac2a4f514f2e1b59a2a3c0c780dcdf474",
+      "expected_text": "\n  \n    \u03f5\n    \n      s\n      l\n      a\n      b\n      ,\n      c\n      o\n      n\n      v\n    \n  \n  =\n  1\n  \u2212\n  \n    \n      [\n      \n        \u220f\n        \n          k\n          =\n          1\n        \n        \n          L\n          \u2212\n          1\n        \n      \n      \n        \n          1\n          +\n          (\n          1\n          \u2212\n          p\n          \n            )\n            \n              2\n              k\n              \u2212\n              1\n            \n          \n        \n        2\n      \n      ]\n    \n    A\n  \n  \u2264\n  \n    p\n    2\n  \n  A\n  (\n  L\n  \u2212\n  1\n  \n    )\n    2\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 118,
+      "source_sha256": "37f0049d0644d9b9405d0c8487c8f85a49f15532130ee921ff57c390016dba6c",
+      "expected_text": "\n  \n    \n      1\n      \u2212\n      (\n      1\n      \u2212\n      p\n      \n        )\n        \n          A\n          L\n          (\n          L\n          \u2212\n          1\n          )\n          \n            /\n          \n          2\n        \n      \n    \n    2\n  \n  \u2264\n  \n    \u03f5\n    \n      s\n      l\n      a\n      b\n    \n    \u2217\n  \n  (\n  p\n  )\n  \u2264\n  min\n  \n    {\n    1\n    ,\n    \n      p\n      2\n    \n    A\n    (\n    L\n    \u2212\n    1\n    \n      )\n      2\n    \n    }\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 120,
+      "source_sha256": "870332c55c551f7b671b0937ed01a2f8d518ce538542cffafc2c3b168e6fba08",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \u03f5\n              \n                s\n                l\n                a\n                b\n              \n              \u2217\n            \n            (\n            p\n            )\n            =\n            \u0398\n            \n              \n            \n            \n              (\n              min\n              {\n              1\n              ,\n              p\n              N\n              (\n              L\n              \u2212\n              1\n              )\n              }\n              )\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/geometry.md",
+      "index": 127,
+      "source_sha256": "3cc8e3af1d0578493048d0baf85bd93e1207666d5e765acc6804c6714da3d4ec",
+      "expected_text": "\n  N\n  =\n  \n    O\n    d\n  \n  \n    \n  \n  \n    (\n    (\n    \u03b5\n    \n      /\n    \n    p\n    \n      )\n      \n        d\n        \n          /\n        \n        (\n        d\n        +\n        1\n        )\n      \n    \n    )\n  \n  ,\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 4,
+      "source_sha256": "f80e2e1fc8bab023fb7788fb22515454477e24c9f1c58cb17fae949635606591",
+      "expected_text": "\n  \n    d\n    v\n  \n  =\n  \n    \n      dist\n    \n    G\n  \n  (\n  v\n  ,\n  S\n  )\n  ,\n  \n    \n  \n  R\n  =\n  \n    max\n    \n      v\n      \u2208\n      V\n    \n  \n  \n    d\n    v\n  \n  ,\n  \n    \n  \n  M\n  (\n  G\n  ,\n  S\n  )\n  =\n  \n    \u2211\n    \n      v\n      \u2208\n      V\n    \n  \n  \n    d\n    v\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 9,
+      "source_sha256": "5a22cbf456405cbfc618394405fe51a47d8c6e8d1ca650c1cacef036d76dcf3e",
+      "expected_text": "\n  \n    \n      E\n    \n    v\n  \n  (\n  X\n  )\n  =\n  \n    \n      I\n      v\n    \n    2\n  \n  \u2297\n  \n    \n      Tr\n    \n    v\n  \n  X\n  ,\n  \n    \n  \n  \n    \n      D\n    \n    \n      p\n      ,\n      v\n    \n  \n  =\n  (\n  1\n  \u2212\n  p\n  )\n  \n    \n  \n  \n    id\n  \n  +\n  p\n  \n    \n  \n  \n    \n      E\n    \n    v\n  \n  ,\n  \n    \n  \n  0\n  \u2264\n  p\n  \u2264\n  1.\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 11,
+      "source_sha256": "88af277e7bb08c3b925e6b49f2d8a8411fb1e9f8ac5b8873f1a515f499f2b1f7",
+      "expected_text": "\n  \n    \n      B\n    \n    t\n  \n  =\n  \n    \n      C\n    \n    \n      t\n      ,\n      S\n    \n  \n  \u2297\n  \n    \n      id\n    \n    \n      V\n      \u2216\n      S\n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 13,
+      "source_sha256": "20a3f0233b326f0db3d12e91a2fdfb002cd06ac570a64e91e87f3ef45c9c04b9",
+      "expected_text": "\n  \n    \u03a8\n    T\n  \n  =\n  (\n  \n    \n      B\n    \n    T\n  \n  \u2218\n  \n    \n      N\n    \n    p\n  \n  \u2218\n  \n    \n      Ad\n    \n    \n      \n        U\n        T\n      \n    \n  \n  )\n  \u2218\n  \u22ef\n  \u2218\n  (\n  \n    \n      B\n    \n    1\n  \n  \u2218\n  \n    \n      N\n    \n    p\n  \n  \u2218\n  \n    \n      Ad\n    \n    \n      \n        U\n        1\n      \n    \n  \n  )\n  ,\n  \n    \n  \n  \n    \n      Ad\n    \n    U\n  \n  (\n  X\n  )\n  =\n  U\n  X\n  \n    U\n    \u2020\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 18,
+      "source_sha256": "768d4ae55ca3883cf1771ab1280c5f0ea12ea013e80880b2399ad2c151b63bb4",
+      "expected_text": "\n  \n    \n      R\n    \n    0\n  \n  (\n  X\n  )\n  =\n  \n    Tr\n  \n  (\n  X\n  )\n  \n    \n  \n  |\n  \n    0\n    n\n  \n  \u27e9\n  \u27e8\n  \n    0\n    n\n  \n  |\n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 19,
+      "source_sha256": "6d91bc00c5562f69080ba4af1a6aae1ac4290ef6bed66d238745a7538d52389d",
+      "expected_text": "\n  \u03f5\n  (\n  \n    \u03a8\n    T\n  \n  )\n  =\n  \n    1\n    2\n  \n  \u2016\n  \n    \u03a8\n    T\n  \n  \u2212\n  \n    \n      R\n    \n    0\n  \n  \n    \u2016\n    \u22c4\n  \n  =\n  \n    sup\n    \n      \n        \u03c1\n        \n          V\n          A\n        \n      \n    \n  \n  \n    1\n    2\n  \n  \n    \n      \u2016\n      (\n      \n        \u03a8\n        T\n      \n      \u2297\n      \n        \n          id\n        \n        A\n      \n      )\n      (\n      \n        \u03c1\n        \n          V\n          A\n        \n      \n      )\n      \u2212\n      |\n      \n        0\n        n\n      \n      \u27e9\n      \u27e8\n      \n        0\n        n\n      \n      |\n      \u2297\n      \n        \u03c1\n        A\n      \n      \u2016\n    \n    1\n  \n  .\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 22,
+      "source_sha256": "8b3c0bc2c3a1a596e869e479cb04053634c4ae5be485e10c9e04c4ea8fef3562",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \u03f5\n              \u2217\n            \n            (\n            G\n            ,\n            S\n            ,\n            p\n            )\n            \u2265\n            \n              \n                1\n                \u2212\n                (\n                1\n                \u2212\n                p\n                \n                  )\n                  \n                    M\n                    (\n                    G\n                    ,\n                    S\n                    )\n                  \n                \n              \n              2\n            \n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 25,
+      "source_sha256": "8d88e42ebda7f87f6e4fe5e4e225dfccd5a6f8353d714b22c4873de5a69dec06",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \n                1\n                \u2212\n                (\n                1\n                \u2212\n                p\n                \n                  )\n                  \n                    M\n                    (\n                    \n                      P\n                      n\n                    \n                    ,\n                    S\n                    )\n                  \n                \n              \n              2\n            \n            \u2264\n            \n              \u03f5\n              \u2217\n            \n            (\n            \n              P\n              n\n            \n            ,\n            S\n            ,\n            p\n            )\n            \u2264\n            min\n            {\n            1\n            ,\n            p\n            M\n            (\n            \n              P\n              n\n            \n            ,\n            S\n            )\n            }\n            .\n          \n        \n      \n    \n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 27,
+      "source_sha256": "282dcec2ed72e158b311c0b975699a49467965dcd1b49929cb70f0cd94e6ce1d",
+      "expected_text": "\n  \n    \u03f5\n    \u2217\n  \n  (\n  \n    P\n    n\n  \n  ,\n  S\n  ,\n  p\n  )\n  =\n  \u0398\n  \n    \n  \n  \n    (\n    min\n    {\n    1\n    ,\n    p\n    M\n    (\n    \n      P\n      n\n    \n    ,\n    S\n    )\n    }\n    )\n  \n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 33,
+      "source_sha256": "6c35cccc5579f4d1cf69943895146e512ad9e495005a03db9a3e47a467c49554",
+      "expected_text": "\n  0\n  <\n  \u03f5\n  <\n  1\n  \n    /\n  \n  2\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 34,
+      "source_sha256": "a8860c0954f57ffa1e00bfe3943932d7ce63f9d507133cd03918c95d9ebacbd1",
+      "expected_text": "\n  0\n  <\n  p\n  <\n  1\n",
+      "required_text": []
+    },
+    {
+      "path": "science/model.md",
+      "index": 35,
+      "source_sha256": "0b01e7c7bcab0a631f81a94d10fe008e842e19c3052b1f40752626fc9cfcb1e3",
+      "expected_text": "\n  M\n  (\n  G\n  ,\n  S\n  )\n  \u2264\n  \n    \n      ln\n      \u2061\n      (\n      1\n      \u2212\n      2\n      \u03f5\n      )\n    \n    \n      ln\n      \u2061\n      (\n      1\n      \u2212\n      p\n      )\n    \n  \n  .\n",
+      "required_text": []
+    }
+  ]
+}
