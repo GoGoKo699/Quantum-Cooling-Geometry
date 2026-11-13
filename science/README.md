@@ -13,3 +13,5 @@ Read in this order:
 5. [Noise and task boundaries](noise_and_scope.md): a mixed-unitary extension, target-preserving counterexamples and physical-output requirements.
 
 [Related work](../references/RELATED_WORK.md) credits prior one-port cooling and transport constructions. [Verification](../verification/README.md) documents finite channel calculations, reference-sensitive tests, trajectory checks and their limits.
+
+For the channel-language prerequisites and a complete three-qubit example, start with the [Watrous 2018 bridge](../learning/WATROUS_BRIDGE.md). The [30 milestones](../learning/MILESTONES.md) join those foundations to the mechanism and constructions above.

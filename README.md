@@ -43,6 +43,8 @@ At the common output time, some recent noise events are too far from a contact f
 
 Start with the [scientific overview](science/README.md) and [exact model](science/model.md), then read the [converse](science/converse.md), [constructions](science/geometry.md), and [physical consequences](science/interpretation.md). [Noise and scope](science/noise_and_scope.md) gives the mixed-unitary extension and target-preserving counterexamples. The [LLM reading guide](llms.txt) maps questions to authoritative files.
 
+For a guided conceptual route, use the [Watrous 2018 source bridge and worked three-qubit example](learning/WATROUS_BRIDGE.md), then the [30-milestone map](learning/MILESTONES.md). The [learning entrypoint](learning/README.md) connects the prerequisites to the scientific proofs.
+
 From the repository root:
 
 ```bash
