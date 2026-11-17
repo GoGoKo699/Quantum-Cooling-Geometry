@@ -98,7 +98,17 @@ Consequently, whenever $`M(P_n,S)>0`$,
 =\Theta\!\left(\min\{1,pM(P_n,S)\}\right)
 ```
 
-with absolute constants. If every site is a contact, $`M=0`$ and a final parallel reset initializes the register exactly. A single qubit with its own contact is included in this zero-error case. See [geometry and constructions](geometry.md) for the path theorem, optimal contact placement, and slabs with a fully cooled face. The graph converse does not by itself give a matching construction on every graph.
+with absolute constants. If every site is a contact, $`M=0`$ and a final parallel reset initializes the register exactly. A single qubit with its own contact is included in this zero-error case. See [geometry and constructions](geometry.md) for the path theorem, optimal contact placement, and slabs with a fully cooled face. For networks whose noncontact vertices have no mutual edges, the [exact contact-throughput theorem](contact_throughput.md) supplies a sharper optimum and an attaining assignment/SWAP schedule. The graph converse does not by itself give a matching construction on every graph.
+
+## Exact optimum when bulk qubits couple only to contacts
+
+Let $`B=V\setminus S`$ have no internal graph edges. Assign every $`v\in B`$ to an adjacent contact $`f(v)\in S`$, and let $`\ell_s=|f^{-1}(s)|`$. Under the same operations and complete-channel criterion,
+
+```math
+\epsilon_*(G,S,p)=1-\max_f\prod_{s\in S}\prod_{j=1}^{\ell_s}\frac{1+(1-p)^j}{2}.
+```
+
+The [proof and algorithm](contact_throughput.md) optimize all allowed coherent controls and durations, including arbitrary joint contact maps and input-independent randomization. A contact-slot assignment followed by one SWAP per bulk qubit attains the exact error with no extra qubits. This statement requires the absence of bulk-to-bulk couplings; it is not an arbitrary-graph routing theorem.
 
 ## Interpretation of the scale
 

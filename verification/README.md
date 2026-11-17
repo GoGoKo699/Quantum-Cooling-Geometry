@@ -9,6 +9,7 @@ Run from the repository root with Python and NumPy:
 ```bash
 python verification/verify.py
 python verification/geometry_checks.py
+python verification/contact_throughput_checks.py
 python verification/make_figure.py
 ```
 
@@ -70,3 +71,19 @@ where `a_v` counts the noise exposures of the final output carrier since its las
 The nearest related internal models use different operations and objectives: `Boundary-Memory-Erasure` fixes an order-preserving qutrit hopping chain and targets a completely mixed replacement, while `Fermionic-Reset-Complexity` prices vacuum-loss action with global coherent controls and no bulk heating. Neither supplies this finite-noise spatial converse. Their source comparisons belong in the scientific related-work account, rather than being inferred from successful tests here.
 
 All physical output qubits are retained in the present model. Fresh bulk pure ancillas, discarded syndrome registers, measurement/postselection, sequential output release and encoded-only recovery change that task. The suite does not test a heat/work cost, finite-rate reservoir, gate-synthesis cost, hardware performance or quantum advantage over classical transport.
+
+## Exact contact assignment and schedule
+
+For the [exact throughput theorem](../science/contact_throughput.md), `contact_schedule.py` accepts a contact list, an adjacency list for the independent bulk, and rational depolarization strength. For example:
+
+```bash
+python verification/contact_schedule.py --p 1/100 \
+  --incidence '{"contacts":["s0","s1"],"neighbors":{"a":["s0"],"b":["s0","s1"],"c":["s1"]}}'
+python verification/contact_throughput_checks.py
+```
+
+Use `--input PATH` for the same JSON object in a file. The planner optimizes the finite-noise survival product using exact rational arithmetic and returns the contact assignment, load counts, legal SWAP layers, terminal ages and exact replacement error. The first round resets all contacts; every subsequent round applies its listed SWAPs, the stipulated noise, then resets all contacts. A separate integer-age optimization reports the universal order quantity; it is not assumed to be identical to the finite-noise objective.
+
+The residual assignment solver is polynomial in the finite graph size and rational input bit length; it uses exact product comparisons instead of floating-point logarithms. This is a logical algorithm account. Large rational numerators, dense incidence lists and graph parsing still have costs; no hardware-time or gate-noise advantage is inferred. The contact/bulk incidence format assumes that no bulk-to-bulk edges are supplied. It does not certify that an experimental device has that architecture or noise law.
+
+The finite checks compare the planner with exhaustive tiny assignments, verify legal contact capacity and output ages, and test small complete replacement channels including an inaccessible reference. The analytical argument establishes arbitrary-control optimality and arbitrary-size scope. Numerical channel tests do not independently optimize the diamond norm or certify the theorem. The generated `contact_throughput_results.json` records the actual test scope.

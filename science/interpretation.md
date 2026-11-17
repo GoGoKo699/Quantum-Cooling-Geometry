@@ -53,3 +53,11 @@ M=A\frac{L(L-1)}2=\frac{N(L-1)}2.
 Independent longitudinal conveyors attain the same order as the converse, even though the converse permits transverse entangling controls. A cubic $`d`$-dimensional register therefore has small-error scale $`pN^{1+1/d}`$. For a two-dimensional square cooled from one edge it is $`pN^{3/2}`$; for a three-dimensional cube cooled from one face it is $`pN^{4/3}`$.
 
 These statements concern all physical qubits at the same time. Mean energy density, a clean logical subsystem and partial-register cooling are weaker objectives with different attainable behavior. The graph lower bound remains valid beyond paths and slabs, but a matching upper on every graph is not claimed.
+
+## Short paths can still share a bottleneck
+
+When bulk qubits have no mutual couplings, [contact throughput](contact_throughput.md) becomes exactly solvable. A star with $`m`$ data leaves and one reset contact has distance sum $`M=m`$, but each leaf's last contact gate occupies a different round. Its optimal terminal ages are $`1,2,\ldots,m`$, with sum $`m(m+1)/2`$. The resulting error has scale $`\min\{1,pm^2\}`$, despite the graph diameter being only two.
+
+Distance and contact count can both stay fixed while throughput changes. Take eight data qubits and eight reset contacts, with contacts connected among themselves. If each data qubit has its own contact, all eight SWAPs can run together and the exact survival probability is $`[(1+(1-p))/2]^8`$. If all eight data qubits attach only to the same contact, their survival probability is $`\prod_{j=1}^8[1+(1-p)^j]/2`$. Both layouts have 16 physical qubits, eight contacts and distance sum eight. Their final age sums are eight and 36. The remaining contacts cannot clear this shared local gate interface, even though arbitrary joint contact processing is allowed.
+
+This is a design rule within the supplied circuit model: distribute access as well as reset hardware. Collective simultaneous couplings, bulk-to-bulk gates, observed-noise feedback or extra discarded workspace change the admissible operations and need their own analysis. The exact [assignment planner](../verification/README.md#exact-contact-assignment-and-schedule) turns an allowed wiring diagram into a schedule and its certified error.
