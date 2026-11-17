@@ -2,7 +2,7 @@
 
 This is a common understanding map for the scientific project. Its single educational anchor is John Watrous, *The Theory of Quantum Information* (2018), used through the [Watrous bridge](WATROUS_BRIDGE.md). The [scientific overview](../science/README.md) and the linked proof pages remain authoritative.
 
-The allocation is **12 background/preliminary milestones and 18 narrative/innovation milestones**. The background builds from one qubit to the complete physical-register reset task. The narrative assembles the terminal-event converse, the attaining transport construction, and their consequences for contact geometry. The longer narrative reflects the project's connection between a channel argument and a spatial construction. The map covers the complete story, rather than every calculation or neighboring cooling problem.
+The allocation is **12 background/preliminary milestones and 18 narrative/innovation milestones**. The background builds from one qubit to the complete physical-register reset task. The narrative first develops the terminal-event converse and the path/slab transport constructions. It then explains why a contact can be a bottleneck even when every bulk site is only one edge away, and derives the exact contact-throughput optimum and its attaining assignment/SWAP schedule. The longer narrative connects complete-channel guarantees to both distance and contact capacity. The map covers the complete story, rather than every calculation or neighboring cooling problem.
 
 ## Background and preliminaries — M01 to M12
 
@@ -156,214 +156,214 @@ The allocation is **12 background/preliminary milestones and 18 narrative/innova
 
 **Central question.** Which noise locations have too little time left to reach a cold contact?
 
-**Understanding target.** Derive the terminal condition $`T-t\lt d_v`$ and explain the count $`M_T=\sum_v\min\{T,d_v\}`$ from one site's last vulnerable rounds to the whole graph.
+**Understanding target.** Derive the terminal condition $`T-t\lt d_v`$ and the count $`M_T=\sum_v\min\{T,d_v\}`$; distinguish a count of late noise opportunities from a count of independent final faults.
 
-**Dependencies and story role.** M06, M10, and M12; this identifies the geometric object that the proof will use.
+**Dependencies and story role.** M06, M10, and M12; this turns graph distances into the spacetime object needed by the general converse.
 
-**Conceptual connection.** Distances become a spacetime count, rather than only a minimum transport duration.
+**Conceptual connection.** The nearest contact may be ideal, but a late local disturbance still cannot reach it before the common output time.
 
 **Sources.** [Terminal-location count](../science/converse.md#count-terminal-noise-locations) and the [locality bridge](WATROUS_BRIDGE.md).
 
-### M14 — Keep one depolarizer and resolve the other noise
+### M14 — Move one selected depolarizer past all remaining contacts
 
-**Central question.** How can one analyze a selected late fault without making the noise visible to the controller?
+**Central question.** How can a noisy coherent circuit yield a simple surviving channel factor?
 
-**Understanding target.** Separate Bernoulli occurrence patterns from Pauli labels, keep one selected terminal event as the full channel, and resolve every other noise occurrence into unitary trajectories.
+**Understanding target.** Keep one terminal event as a full depolarizer, resolve all other noise into Pauli-unitary trajectories, and conjugate the selected channel through later gates. Explain why disjoint causal support makes it commute through every later contact map.
 
-**Dependencies and story role.** M05–M06 and M13; this converts a complicated noisy history into the useful proof representation.
+**Dependencies and story role.** M05–M06, M09–M10, and M13; this supplies the load-bearing channel factorization.
 
-**Conceptual connection.** The representation is mathematical conditioning for an unconditional bound, not heralding, observed flags, or feedback.
+**Conceptual connection.** Conditioning is a mathematical proof device; no noise flag or measurement-conditioned feedback is given to the controller.
 
-**Sources.** [Selection and averaging](../science/converse.md#count-terminal-noise-locations); Watrous, Chapters 2 and 4, through the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [Selected-channel factorization](../science/converse.md#a-depolarizer-that-cannot-reach-a-contact) and the [worked proof bridge](WATROUS_BRIDGE.md).
 
-### M15 — Push the selected channel through the circuit
+### M15 — From a mixed factor to a finite-noise error bound
 
-**Central question.** Why can a late depolarizer be moved to the output even though reset maps occur in between?
+**Central question.** What operational obstruction follows from at least one surviving depolarizer?
 
-**Understanding target.** Explain unitary conjugation of its Pauli algebra and commutation with a contact map whose support is disjoint from its evolving gate cone.
+**Understanding target.** Use the form $`W[(I/2)\otimes\tau]W^\dagger`$, its largest eigenvalue at most $`1/2`$, and the all-zero target test. Average occurrence patterns to obtain $`\epsilon\ge[1-(1-p)^{M_T}]/2`$.
 
-**Dependencies and story role.** M03, M09–M10, and M14; this is the load-bearing channel factorization.
+**Dependencies and story role.** M07–M09 and M13–M14; this joins the local mechanism to an unconditional circuit bound.
 
-**Conceptual connection.** Causal disjointness supplies the exact algebraic step that a general claim about reset and eigenvalues would not justify.
+**Conceptual connection.** Coherent compression may relocate the mixed degree of freedom, while the task retains every physical output.
 
-**Sources.** [Depolarizer factorization](../science/converse.md#a-depolarizer-that-cannot-reach-a-contact) and the [project proof bridge](WATROUS_BRIDGE.md).
+**Sources.** [Spectral obstruction](../science/converse.md#a-depolarizer-that-cannot-reach-a-contact), [event probability](../science/converse.md#count-terminal-noise-locations), and the [bridge](WATROUS_BRIDGE.md).
 
-### M16 — From the surviving factor to a purity obstruction
+### M16 — A graph bound that no choice of duration evades
 
-**Central question.** What does one terminal complete depolarizer force at the required output?
+**Central question.** Why do both short and long cooling schedules obey the distance-sum floor?
 
-**Understanding target.** Obtain the conjugated tracial-factor form, its largest-eigenvalue bound, and the resulting overlap limit with any pure register target, including mixed or correlated earlier inputs.
+**Understanding target.** For $`T\ge R`$, identify $`M_T=M=\sum_vd_v`$. For $`T\lt R`$, use a maximally mixed input and an inserted unreachable depolarizer. Interpret $`[1-(1-p)^M]/2`$ at small noise and when every site is a contact.
 
-**Dependencies and story role.** M07–M09 and M15; this extracts the operational consequence of the factorization.
+**Dependencies and story role.** M10–M12 and M15; this completes the arbitrary-control, duration-independent graph converse.
 
-**Conceptual connection.** Coherent compression may move the mixed degree of freedom but cannot leave every retained physical output pure.
+**Conceptual connection.** The general lower bound is neither an exact finite-size optimum nor a matching construction on every graph.
 
-**Sources.** [Surviving factor and spectrum](../science/converse.md#a-depolarizer-that-cannot-reach-a-contact); Watrous, Chapters 2–4, through the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [Remove the duration dependence](../science/converse.md#remove-the-duration-dependence) and [interpret the scale](../science/model.md#interpretation-of-the-scale).
 
-### M17 — A finite-noise lower bound
+### M17 — A path conveyor really erases the whole input
 
-**Central question.** How does the chance of at least one terminal event become an unconditional reset-error bound?
+**Central question.** How does a local SWAP sequence become a reference-uniform replacement channel?
 
-**Understanding target.** Combine independence, the probability $`1-(1-p)^{M_T}`$, and the conditional overlap bound to establish the finite-depth lower bound with its factor $`1/2`$.
+**Understanding target.** Follow the odd/even carrier routes until all original carriers reach the contact. Derive the final age multiset $`\{0,1,3,\ldots,2\ell-3\}`$ and the product of zero probabilities for the resulting diagonal replacement state.
 
-**Dependencies and story role.** M06–M08 and M13–M16; this joins the local mechanism to a whole-circuit statement.
+**Dependencies and story role.** M02–M08, M10, and M16; this constructs an admissible controller rather than only testing one favorable input.
 
-**Conceptual connection.** The proof is nonperturbative and does not count every circuit fault as fatal or assume independent output errors.
+**Conceptual connection.** A carrier age counts noise layers after its final reset; earlier input information and reference correlations are discarded when that carrier reaches the contact.
 
-**Sources.** [Event probability and target test](../science/converse.md#count-terminal-noise-locations) and the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [One-contact conveyor](../science/geometry.md#a-one-contact-path-conveyor) and the [complete three-qubit example](WATROUS_BRIDGE.md#a-complete-three-qubit-example).
 
-### M18 — Eliminate the cooling-duration loophole
+### M18 — Fixed path layouts and optimal placement
 
-**Central question.** Why can neither a shallow circuit nor a longer schedule escape the graph floor?
+**Central question.** How do contact cells convert a local conveyor into a path design rule?
 
-**Understanding target.** Distinguish $`T\ge R`$, where $`M_T=M(G,S)`$, from $`T\lt R`$, where an inserted input depolarizer on the maximally mixed state yields a half-error obstruction.
+**Understanding target.** Partition the path into contiguous nearest-contact cells, explain the two-arm age bound, and obtain $`\epsilon_*\le\min\{1,pM\}`$ for every fixed nonempty contact set. Use the cell cost $`g(a)=\lfloor a^2/4\rfloor`$ to understand balanced cells and median contacts.
 
-**Dependencies and story role.** M09–M10 and M17; this completes the duration-independent arbitrary-control converse.
+**Dependencies and story role.** M16–M17; this matches the graph converse in order and then optimizes a supplied number of path contacts.
 
-**Conceptual connection.** The short-depth proof uses a surviving global mixed factor, rather than inferring global impurity merely from one mixed marginal.
+**Conceptual connection.** The exact placement formula concerns the distance sum; the path theorem gives matching error order, not an exact finite-noise optimum.
 
-**Sources.** [Duration-independent converse](../science/converse.md#remove-the-duration-dependence) and the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [Every fixed path placement](../science/geometry.md#every-fixed-contact-placement-on-a-path), [path placement formulas](../science/geometry.md), and the [bridge](WATROUS_BRIDGE.md#from-the-example-to-the-geometry-law).
 
-### M19 — Read the distance-sum law accurately
+### M19 — A full cold face cools parallel slab columns
 
-**Central question.** What does the graph bound establish in weak noise, large exposure, and full contact coverage?
+**Central question.** When does a higher-dimensional register reduce to parallel path conveyors?
 
-**Understanding target.** Interpret $`M=\sum_v d_v`$, the small-exposure scale $`pM`$, the constant lower floor at large exposure, and exact zero geometry cost when $`M=0`$.
+**Understanding target.** For a slab of thickness $`L`$ and cross-section containing $`A`$ sites, derive $`M=AL(L-1)/2`$ with one whole face reset. Explain why synchronized independent column conveyors provide a matching order construction.
 
-**Dependencies and story role.** M11–M12 and M18; this turns the converse into a physical accuracy constraint without overstating it.
+**Dependencies and story role.** M10, M16, and M18; this identifies the proved higher-dimensional geometry.
 
-**Conceptual connection.** The lower bound gives neither an exact optimal constant nor error tending to one, and it supplies no arbitrary-graph attaining protocol.
+**Conceptual connection.** A full cooled face supplies one contact per column; it does not establish an arbitrary-graph or sparse-boundary upper bound.
 
-**Sources.** [Scale and necessary condition](../science/model.md#interpretation-of-the-scale) and [converse limits](../science/converse.md#what-the-converse-establishes).
+**Sources.** [Rectangular slabs](../science/geometry.md#rectangular-slabs-with-one-full-cold-face) and [full-face interpretation](../science/interpretation.md#cooling-from-a-full-face).
 
-### M20 — Reset by a local SWAP conveyor
+### M20 — A distance-one star exposes a contact bottleneck
 
-**Central question.** How can a simple local circuit erase every original carrier through one endpoint?
+**Central question.** Why can short routes still force a large initialization error?
 
-**Understanding target.** Follow the odd/even SWAP trajectories, their endpoint wait and reversal, and the finite flush that discards all original carriers, including their reference correlations.
+**Understanding target.** For a star with $`m`$ bulk leaves and one contact, note that $`M=m`$ but the contact can touch only one leaf per gate layer. Reconstruct the three-leaf schedule and its final bulk ages $`3,2,1`$ before reading the exact general law.
 
-**Dependencies and story role.** M02–M04, M08, and M10; this starts the constructive side from explicit local operations.
+**Dependencies and story role.** M11, M16–M19; this tests whether the old geometric quantity can describe a busy hub.
 
-**Conceptual connection.** The reference-uniform guarantee follows from complete carrier removal, not from checking one favorable population profile.
+**Conceptual connection.** A graph distance counts route length, while a contact shared by many routes imposes additional waiting and terminal noise.
 
-**Sources.** [One-contact conveyor](../science/geometry.md#a-one-contact-path-conveyor) and the [worked bridge](WATROUS_BRIDGE.md).
+**Sources.** [Worked star and slot example](WATROUS_BRIDGE.md#when-short-routes-share-one-contact) and [contact throughput](../science/contact_throughput.md).
 
-### M21 — Count output ages and calculate the actual channel
+### M21 — Contact-cover architectures and feasible assignments
 
-**Central question.** Why is the noise remaining after a conveyor flush determined by final carrier ages?
+**Central question.** Which graph restriction lets one solve the contact bottleneck exactly?
 
-**Understanding target.** Explain the age multiset $`\{0,1,3,\ldots,2\ell-3\}`$, the single-carrier state, and the product formula for the endpoint conveyor's exact half-diamond reset error.
+**Understanding target.** Define the bulk $`B=V\setminus S`$ and require no bulk–bulk edges, with every bulk vertex adjacent to a contact. Define a feasible assignment $`f:B\to S`$ and contact loads $`\ell_s=|f^{-1}(s)|`$; explain why a bulk vertex with several neighbors must still be assigned to an actual allowed edge.
 
-**Dependencies and story role.** M05–M08 and M20; this derives the finite-error certificate for the construction.
+**Dependencies and story role.** M10–M12 and M20; this states the exact new theorem class before its proof.
 
-**Conceptual connection.** Noise before a carrier's last reset is erased; noise since that reset sets its output state. A diagonal replacement channel makes target population sufficient here.
+**Conceptual connection.** Contact–contact edges and joint contact maps are allowed; independent bulk vertices are the crucial restriction.
 
-**Sources.** [Exact conveyor channel and error](../science/geometry.md#a-one-contact-path-conveyor); Watrous, Chapters 2–3, through the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [Exact contact-cover account](../science/contact_throughput.md) and the [scientific model](../science/model.md).
 
-### M22 — An interior contact and two bouncing arms
+### M22 — Last-contact ages expose terminal local noise
 
-**Central question.** How is a contact at an arbitrary position controlled by the sum of distances on its two sides?
+**Central question.** Why is each bulk qubit’s final contact gate the useful event?
 
-**Understanding target.** Follow the unfolded carrier cycle and the outward/inward arm ages to establish that total final age is at most twice the cell's distance sum.
+**Understanding target.** If the last contact gate on bulk vertex $`v`$ occurs at round $`t_v`$, count $`a_v=T-t_v+1`$ noise layers, including that round. Commute their composition to the output using depolarizing covariance and the absence of later nonlocal gates on $`v`$.
 
-**Dependencies and story role.** M10 and M20–M21; this extends the attaining mechanism beyond an endpoint contact.
+**Dependencies and story role.** M05, M11, M14, and M21; this replaces a single selected-fault argument by simultaneous terminal channels on the bulk.
 
-**Conceptual connection.** The arm estimate links an exact transport schedule to the same geometric quantity that appears in the converse.
+**Conceptual connection.** The output state before these terminal maps can be arbitrarily entangled; the argument does not assume independently generated output faults.
 
-**Sources.** [Fixed-placement proof and arm calculation](../science/geometry.md#every-fixed-contact-placement-on-a-path) and the [conveyor bridge](WATROUS_BRIDGE.md).
+**Sources.** [Terminal-channel proof](../science/contact_throughput.md) and the [throughput bridge](WATROUS_BRIDGE.md#why-this-schedule-is-globally-optimal).
 
-### M23 — Match the converse for every fixed path layout
+### M23 — The target test turns contact ages into a product bound
 
-**Central question.** How do nearest-contact cells turn the local conveyors into a complete path theorem?
+**Central question.** How does one bound all coherent controllers without assuming a product state?
 
-**Understanding target.** Partition a path into contiguous contact cells, run synchronized periodic conveyors, and combine replacement-channel errors to obtain the upper bound $`\epsilon_*\le\min\{1,pM\}`$.
+**Understanding target.** Set $`h_p(j)=[1+(1-p)^j]/2`$. Apply each terminal channel’s adjoint to its local zero projector and use the largest eigenvalue of the resulting tensor-product effect. At one contact, distinct last-gate rounds force sorted ages $`a_{s,j}\ge j`$. Include never-touched bulk vertices through a maximally mixed input and factors $`1/2`$.
 
-**Dependencies and story role.** M08, M18–M19, and M22; this integrates lower and upper arguments under the same model.
+**Dependencies and story role.** M07–M09 and M21–M22; this proves the optimal-assignment population ceiling for every finite depth.
 
-**Conceptual connection.** The tight order covers every nonempty fixed path contact set, while the arbitrary-graph result remains a converse alone.
+**Conceptual connection.** A tensor product of effects bounds an arbitrary correlated pre-noise state; it is not a statement that that state factorizes.
 
-**Sources.** [Fixed path placement theorem](../science/geometry.md#every-fixed-contact-placement-on-a-path) and [main statements](../science/model.md#main-statements).
+**Sources.** [Complete lower-bound proof](../science/contact_throughput.md) and [why the star schedule is optimal](WATROUS_BRIDGE.md#why-this-schedule-is-globally-optimal).
 
-### M24 — Place a fixed number of contacts optimally
+### M24 — An assignment becomes a legal simultaneous SWAP schedule
 
-**Central question.** Why do balanced cells with median contacts minimize the path distance sum?
+**Central question.** How can every contact attain its best available ages at the common output time?
 
-**Understanding target.** Connect the cell cost $`g(a)=\lfloor a^2/4\rfloor`$, its nondecreasing discrete increments, and the exact quotient–remainder formula for $`M_{n,m}^{\min}`$.
+**Understanding target.** Reset all contacts in one initial round. For each contact, schedule its assigned leaves backwards from the final round, giving ages $`1,\ldots,\ell_s`$. Show that distinct assigned leaves and one gate per contact make every layer a matching, even for unequal loads.
 
-**Dependencies and story role.** M10 and M23; this moves from analyzing a supplied layout to designing the layout.
+**Dependencies and story role.** M03–M04, M11, M17, and M21–M23; this supplies the explicit attaining controller.
 
-**Conceptual connection.** A discrete placement problem becomes an initialization-accuracy rule because the same distance sum governs the path frontier.
+**Conceptual connection.** The initial reset purifies each contact before its first SWAP; the reset after every noisy round discards the bulk input that has just arrived.
 
-**Sources.** [Optimal path placement and proof](../science/geometry.md#optimally-placed-contacts-on-a-path) and the [project bridge](WATROUS_BRIDGE.md).
+**Sources.** [Attaining assignment/SWAP protocol](../science/contact_throughput.md) and [three-leaf schedule](WATROUS_BRIDGE.md#when-short-routes-share-one-contact).
 
-### M25 — Sparse, clustered, and nearly complete contact layouts
+### M25 — The exact optimum is a complete-channel statement
 
-**Central question.** When does contact placement matter more than contact count?
+**Central question.** Why does attaining target population also attain the claimed half-diamond error?
 
-**Understanding target.** Compare alternating and clustered layouts, interpret the uniform order $`n(n-m)/m`$, and retain the dense-contact boundary where $`M_{n,n}^{\min}=0`$.
+**Understanding target.** Prove that every original input and its reference correlations are discarded. The final channel replaces the register by pure contacts and diagonal bulk states with target population $`\prod_s\prod_{j=1}^{\ell_s}h_p(j)`$. Combine both directions to obtain $`\epsilon_*=1-\max_f\prod_s\prod_{j=1}^{\ell_s}h_p(j)`$.
 
-**Dependencies and story role.** M19 and M23–M24; this develops the practical meaning of the one-dimensional result.
+**Dependencies and story role.** M04, M07–M08, and M23–M24; this closes the exact finite-noise theorem.
 
-**Conceptual connection.** The sparse simplification $`n^2/m`$ is useful in its regime but cannot describe a register whose every site can reset.
+**Conceptual connection.** Check empty bulk, $`p=0`$, and $`p=1`$ explicitly. Exact output-state calculations imply channel error here because the construction is replacement.
 
-**Sources.** [Layout comparison](../science/interpretation.md#the-same-contact-count-different-layouts) and [finite placement formula](../science/geometry.md#optimally-placed-contacts-on-a-path).
+**Sources.** [Exact optimum and boundary cases](../science/contact_throughput.md) and the [Watrous channel-error translation](WATROUS_BRIDGE.md#translate-the-notation-and-the-task).
 
-### M26 — Cool a slab from one full face
+### M26 — Compile the optimal assignment by slot costs
 
-**Central question.** How do the lower bound and construction extend when many longitudinal columns share a cold face?
+**Central question.** How can the exact finite-noise optimum be turned into a concrete controller?
 
-**Understanding target.** Derive $`M=AL(L-1)/2`$, combine independent column conveyors, and interpret the cubic-register scale $`pN^{1+1/d}`$ with its stated geometry and $`L=1`$ limit.
+**Understanding target.** Convert the product objective into additive costs $`c_j=-\ln h_p(j)`$. Route one unit from each bulk vertex through an allowed contact and a unit-capacity contact-slot arc. Explain why nondecreasing costs permit occupied slot prefixes, and then translate the resulting assignment into M24’s schedule.
 
-**Dependencies and story role.** M18–M19 and M21–M23; this joins the channel mechanism to a higher-dimensional architecture.
+**Dependencies and story role.** M21 and M24–M25; this turns the optimum from an existence statement into a finite optimization procedure.
 
-**Conceptual connection.** The lower permits transverse entangling gates; the upper attains the order without them. This does not establish matching performance on every graph.
+**Conceptual connection.** Min-cost flow is an inherited algorithmic tool. Its adjacency constraints enforce the physical graph; assigning by load alone can choose an impossible edge.
 
-**Sources.** [Rectangular slab theorem](../science/geometry.md#rectangular-slabs-with-one-full-cold-face) and [full-face interpretation](../science/interpretation.md#cooling-from-a-full-face).
+**Sources.** [Assignment compiler](../science/contact_throughput.md) and [slot interpretation](WATROUS_BRIDGE.md#from-a-layout-to-the-optimal-assignment).
 
-### M27 — Which changes of noise preserve the obstruction?
+### M27 — The throughput scale and balanced contact banks
 
-**Central question.** Why does entropy-injecting depolarization behave differently from noise that preserves the target?
+**Central question.** What simple design law survives when the exact product is inconvenient?
 
-**Understanding target.** State the complete-depolarization plus mixed-unitary-residual sufficient condition, interpret its Pauli-channel example, and explain the phase-noise and amplitude-damping exceptions.
+**Understanding target.** Define $`A_*=A(G,S)=\min_f\sum_s\ell_s(\ell_s+1)/2`$ and derive error order $`\Theta(\min\{1,pA_*\})`$. For one-contact stars compute $`A_*=m(m+1)/2`$; for complete bipartite contact banks explain balanced loads and the quotient–remainder exact product.
 
-**Dependencies and story role.** M05, M09, and M14–M19; this tests the mechanism at its noise-model boundary.
+**Dependencies and story role.** M18, M20, and M25–M26; this gives useful layout comparisons and noise/contact scaling.
 
-**Conceptual connection.** The extension supplies a converse parameter, while the depolarizing conveyor upper cannot be transferred using that parameter alone.
+**Conceptual connection.** The integer-slot optimizer for the order scale need not be asserted to optimize the exact finite-noise product on every restricted adjacency graph.
 
-**Sources.** [Noise decomposition](../science/noise_and_scope.md#a-mixed-unitary-residual-is-sufficient-for-the-converse) and [target-preserving exceptions](../science/noise_and_scope.md#target-preserving-noise-can-evade-the-floor); Watrous, Chapter 4, through the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [Throughput law and examples](../science/contact_throughput.md) and the [worked assignment bridge](WATROUS_BRIDGE.md#from-a-layout-to-the-optimal-assignment).
 
-### M28 — Identify the consequential difference from earlier cooling results
+### M28 — Which physical changes alter the result?
 
-**Central question.** Which ingredients are inherited, and what operational conclusion does this account add?
+**Central question.** Why must the noise and entropy outlets remain part of the claimed law?
 
-**Understanding target.** Distinguish known single-port cooling, noisy algorithmic-cooling limits, and local refrigeration from the protocol-uniform late-event factorization and spatial whole-register accuracy law.
+**Understanding target.** Explain the positive complete-depolarization plus mixed-unitary-residual condition for the general converse, and the target-preserving phase-noise exception. Retain the physical-output task, gates–noise–contacts order, unobserved noise and absence of extra protected memory. Identify why adding bulk–bulk edges removes the exact last-contact proof.
 
-**Dependencies and story role.** M11–M12, M18, M23, and M27; this locates the supported contribution in its scientific setting.
+**Dependencies and story role.** M05, M11, M16, and M21–M27; this distinguishes proved extensions from changes of task.
 
-**Conceptual connection.** The quantum claim concerns arbitrary coherent controls and complete-channel accuracy; no quantum-over-classical speedup or new thermodynamic work law is asserted.
+**Conceptual connection.** The mixed-unitary extension supplies a converse parameter; it does not transfer the exact depolarizing contact-throughput formula or prove a continuous-time or heat/work theorem.
 
-**Sources.** [Attribution and comparisons](../references/RELATED_WORK.md), [physical scope](../science/noise_and_scope.md#every-physical-output-is-part-of-the-task), and the [bridge](WATROUS_BRIDGE.md).
+**Sources.** [Noise and scope](../science/noise_and_scope.md), [exact-throughput scope](../science/contact_throughput.md), and [physical interpretation](../science/interpretation.md).
 
-### M29 — Understand the evidence and its limits
+### M29 — Attribution, analytical proof and finite evidence
 
-**Central question.** Which parts of the account are proved analytically, and what can the finite computations verify?
+**Central question.** What establishes the scientific advance, and what do the computations actually check?
 
-**Understanding target.** Relate small-channel calculations, carrier-age checks, placement enumeration, and regenerated figures to their precise claims without treating a finite screen as the universal proof.
+**Understanding target.** Separate known channel facts, single-port/algorithmic cooling and standard min-cost flow from the protocol-uniform geometric converse and exact contact-cover optimum. Relate carrier tracking, assignment enumeration, channel checks and finite boundary cases to the specific identities they test.
 
-**Dependencies and story role.** M17–M18 and M21–M28; this integrates the result with its reproducible evidence.
+**Dependencies and story role.** M14–M28; this connects the complete account to its prior work and reproducible evidence.
 
-**Conceptual connection.** Numerical and exact-integer diagnostics check conventions and finite identities, while the factorization, counting, and transport proofs establish the arbitrary-size statements.
+**Conceptual connection.** Finite calculations test conventions and examples. The arbitrary-size factorization, age-packing argument and complete-channel construction remain analytical claims with their stated assumptions.
 
-**Sources.** [Verification guide](../verification/README.md), [recorded checks](../verification/results.json), and [geometry diagnostics](../verification/geometry_checks_results.json).
+**Sources.** [Related work](../references/RELATED_WORK.md), [verification guide](../verification/README.md), and [contact-throughput theorem](../science/contact_throughput.md).
 
-### M30 — Assemble the complete geometry–accuracy account
+### M30 — Assemble distance, contact throughput and complete initialization
 
-**Central question.** What can be concluded about a proposed register and contact layout, and what remains outside the result?
+**Central question.** How should a proposed register and reset layout be assessed from end to end?
 
-**Understanding target.** Connect the physical task, graph floor, fixed-path and slab constructions, contact-placement choices, noise assumptions, and reference-stable output guarantee into one qualified explanation.
+**Understanding target.** State the physical task and noise timing; apply the general distance converse; select the proved path/slab construction or the exact contact-cover assignment method when its hypotheses hold. Report the resulting complete-channel accuracy and the contact/transport resources needed to attain it.
 
-**Dependencies and story role.** M12 and M13–M29; this is the narrative synthesis and the end of the project map.
+**Dependencies and story role.** M12 and M13–M29; this synthesizes the original geometry law and the exact throughput upgrade.
 
-**Conceptual connection.** The field can use distance sum as a tight path/slab accuracy scale while keeping logical cooling, extra entropy outlets, arbitrary-graph achievability, continuous-time dynamics, and heat/work costs distinct.
+**Conceptual connection.** Distances control how far entropy must travel; contact throughput can add a queue even at distance one. Arbitrary-graph SWAP optimality, logical-only cooling, laboratory time, and thermodynamic reset costs remain separate questions.
 
-**Sources.** [Scientific overview](../science/README.md), [model and theorem](../science/model.md), [geometry](../science/geometry.md), [interpretation](../science/interpretation.md), [scope](../science/noise_and_scope.md), and the [single-anchor bridge](WATROUS_BRIDGE.md).
+**Sources.** [Scientific overview](../science/README.md), [model](../science/model.md), [geometry](../science/geometry.md), [exact contact throughput](../science/contact_throughput.md), and the [single-anchor bridge](WATROUS_BRIDGE.md).

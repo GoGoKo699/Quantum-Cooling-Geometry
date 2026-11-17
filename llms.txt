@@ -29,3 +29,7 @@ Essential distinctions:
 - M=sum_v dist(v,S) gives a graph converse, with matching order for all fixed path placements and full-face slabs. No arbitrary-graph upper is claimed.
 - The fixed-placement path optimum is Theta(min(1,pM)) for M>0, with explicit lower and upper constants; exact finite-size optimality is not claimed.
 - Logical-only cooling, sacrificial workspace, bulk measurements, continuous-time bounded-control limits, heat/work costs and quantum advantage are not established.
+
+## Contact throughput and an optimal schedule
+
+For the exact arbitrary-control optimum when noncontact qubits have no mutual edges, start with science/contact_throughput.md. It proves the product formula, handles untouched vertices and arbitrary references, specifies contact-slot assignment and the attaining SWAP/reset schedule, and derives star and multiple-contact consequences. verification/contact_schedule.py implements the rational-noise planner; verification/contact_throughput_checks.py checks its assignment and channel identities. The general-graph distance converse and path/slab constructions remain separately scoped in science/converse.md and science/geometry.md.
