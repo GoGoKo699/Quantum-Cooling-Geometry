@@ -78,7 +78,7 @@ These moves can be performed simultaneously for all visited bulk vertices. Remov
 (\mathcal D^{(a)})^*(P_0)
 =(1-p)^aP_0+\frac{1-(1-p)^a}{2}I,
 \qquad
-\left\|(\mathcal D^{(a)})^*(P_0)\right\|_\infty=h_p(a).
+\left\Vert (\mathcal D^{(a)})^*(P_0)\right\Vert _\infty=h_p(a).
 ```
 
 The pure all-zero target effect on the contacts has norm one. Positivity and the tensor-product operator norm consequently give
@@ -124,7 +124,7 @@ The upper bound by $`F_*`$ still follows. This includes depth zero. It avoids as
 For the input just used, the two-outcome test with effect $`|0^n\rangle\langle0^n|`$ now yields
 
 ```math
-\frac12\left\|\Psi_T(\rho)-|0^n\rangle\langle0^n|\right\|_1
+\frac12\left\Vert \Psi_T(\rho)-|0^n\rangle\langle0^n|\right\Vert _1
 \ge1-\langle0^n|\Psi_T(\rho)|0^n\rangle
 \ge1-F_*.
 ```
@@ -167,8 +167,8 @@ The initial contact inputs are discarded by the first resets. Every initial bulk
 with factors placed at their assigned physical vertices. This expression holds for every reference-entangled input. Since $`\omega_f`$ is diagonal in the target basis,
 
 ```math
-\frac12\|\Psi_T-\mathcal R_0\|_\diamond
-=\frac12\|\omega_f-|0^n\rangle\langle0^n|\|_1
+\frac12\Vert \Psi_T-\mathcal R_0\Vert _\diamond
+=\frac12\Vert \omega_f-|0^n\rangle\langle0^n|\Vert _1
 =1-\prod_{u\in S}\prod_{j=1}^{\ell_u}h_p(j).
 ```
 
@@ -275,7 +275,7 @@ For four leaves, the attaining protocol first resets the center and then swaps o
 
 For the complete bipartite graph $`K_{s,m}`$, take all $`s`$ vertices on one side as contacts and all $`m`$ vertices on the other as bulk. Every bulk vertex can use every contact. Balancing loads minimizes the convex cost: if one load exceeds another by at least two, moving one vertex from the larger to the smaller cannot increase the sum, because $`c_p(j)`$ is nondecreasing.
 
-Write $`m=sq+r`$ with $`0\le r<s`$. There are $`s-r`$ loads $`q`$ and $`r`$ loads $`q+1`$, and
+Write $`m=sq+r`$ with $`0\le r\lt s`$. There are $`s-r`$ loads $`q`$ and $`r`$ loads $`q+1`$, and
 
 ```math
 \boxed{\displaystyle
