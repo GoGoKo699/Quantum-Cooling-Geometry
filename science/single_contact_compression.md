@@ -117,10 +117,10 @@ Choose $`b=\lceil\sqrt{m\ln(2m)}\rceil`$ capped at $`m`$. Partition the bulk int
 
 Discard these $`K`$ carriers through the single contact in a fixed order. If the gateway itself is in the code, discard it first by a bridge SWAP and reset. For each other coded site, swap its carrier into the gateway and then swap across the bridge, resetting the contact after every round. The process uses at most $`2K`$ rounds. Whether or not the gateway was initially in the code, in the ideal successful branch the gateway starts zero or becomes zero immediately after its own discard. Pure resets provide the subsequent clean gateway carriers. The empty code needs no routing.
 
-Keep the full noise during this first discard stage. Conditional on success before the stage, the remaining final carriers all started from logical zero, either in an unencoded site before routing or upon preparation at the contact. All the initial code carriers are discarded. Each surviving carrier follows a separate space-time trajectory through the SWAP layers, so the local noise factors governing distinct final carriers are independent. The result on this branch is a new product with excitation probabilities at most $`O(pK)`$, regardless of the first pass's code values. The contact is pure after the last reset. Consequently,
+Keep the full noise during this first discard stage. Conditional on success before the stage, the remaining final carriers all started from logical zero, either in an unencoded site before routing or upon preparation at the contact. All the initial code carriers are discarded. Each surviving carrier follows a separate space-time trajectory through the SWAP layers, so the local noise factors governing distinct final carriers are independent. The result on this branch is a new product with excitation probabilities at most $`O(pK)`$, regardless of the first pass's code values. The contact is pure after the last reset. Let $`W`$ be the bulk Hamming weight after the drain, and let $`A`$ be the event that the first compression succeeds. Then
 
 ```math
-\mathbb P(\text{bulk weight after first routing is at least 2}\mid\text{first compression succeeds})
+\mathbb P(W\ge2\mid A)
 \ \le\ O(p^2m^2K^2)
 \ =\ O\!\left(\frac{p^2m^4\ln^2(2b)}{b^2}\right).
 ```
