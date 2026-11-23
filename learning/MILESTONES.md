@@ -2,7 +2,7 @@
 
 This is a common understanding map for the scientific project. Its single educational anchor is John Watrous, *The Theory of Quantum Information* (2018), used through the [Watrous bridge](WATROUS_BRIDGE.md). The [scientific overview](../science/README.md) and the linked proof pages remain authoritative.
 
-The allocation is **12 background/preliminary milestones and 18 narrative/innovation milestones**. The background builds from one qubit to the complete physical-register reset task. The narrative first develops the terminal-event converse and the path/slab transport constructions. It then explains why a contact can be a bottleneck even when every bulk site is only one edge away, and derives the exact contact-throughput optimum and its attaining assignment/SWAP schedule. The longer narrative connects complete-channel guarantees to both distance and contact capacity. The map covers the complete story, rather than every calculation or neighboring cooling problem.
+The allocation is **12 background/preliminary milestones and 18 narrative/innovation milestones**. The background builds from one qubit to the complete physical-register reset task. The narrative first develops the terminal-event converse and the path/slab transport constructions. It then explains why a contact can be a bottleneck even when every bulk site is only one edge away, and derives the exact contact-throughput optimum and its attaining assignment/SWAP schedule. The last three milestones show how reversible in-register compression changes the optimal accuracy when the bulk can interact through the same reset gateway.
 
 ## Background and preliminaries — M01 to M12
 
@@ -332,38 +332,38 @@ The allocation is **12 background/preliminary milestones and 18 narrative/innova
 
 **Sources.** [Throughput law and examples](../science/contact_throughput.md) and the [worked assignment bridge](WATROUS_BRIDGE.md#from-a-layout-to-the-optimal-assignment).
 
-### M28 — Which physical changes alter the result?
+### M28 — One gateway makes even short routes queue
 
-**Central question.** Why must the noise and entropy outlets remain part of the claimed law?
+**Central question.** What changes when the bulk can interact but still has only one edge to reset?
 
-**Understanding target.** Explain the positive complete-depolarization plus mixed-unitary-residual condition for the general converse, and the target-preserving phase-noise exception. Retain the physical-output task, gates–noise–contacts order, unobserved noise and absence of extra protected memory. Identify why adding bulk–bulk edges removes the exact last-contact proof.
+**Understanding target.** On a one-gateway clique, follow the physical carriers through two successive contact SWAPs. Explain why surviving departures must be separated by at least one round, and construct the schedule with ages $`1,3,\ldots,2m-1`$. Then count the number of bulk sites outside the future reset cone during the last logarithmic number of gate layers.
 
-**Dependencies and story role.** M05, M11, M16, and M21–M27; this distinguishes proved extensions from changes of task.
+**Dependencies and story role.** M10, M14–M16, and M22–M25; this gives the benchmark for routing and an independent lower bound for all controllers.
 
-**Conceptual connection.** The mixed-unitary extension supplies a converse parameter; it does not transfer the exact depolarizing contact-throughput formula or prove a continuous-time or heat/work theorem.
+**Conceptual connection.** The actual matching circuit limits how fast a reset cone grows, even when the graph itself supplies short paths.
 
-**Sources.** [Noise and scope](../science/noise_and_scope.md), [exact-throughput scope](../science/contact_throughput.md), and [physical interpretation](../science/interpretation.md).
+**Sources.** [Single-contact benchmark and cone proof](../science/single_contact_compression.md), [noise and scope](../science/noise_and_scope.md), and [physical interpretation](../science/interpretation.md).
 
-### M29 — Attribution, analytical proof and finite evidence
+### M29 — Compress the errors, then clean up after transport
 
-**Central question.** What establishes the scientific advance, and what do the computations actually check?
+**Central question.** How can interaction in the bulk reduce the number of carriers that must reach the contact?
 
-**Understanding target.** Separate known channel facts, single-port/algorithmic cooling and standard min-cost flow from the protocol-uniform geometric converse and exact contact-cover optimum. Relate carrier tracking, assignment enumeration, channel checks and finite boundary cases to the specific identities they test.
+**Understanding target.** Map vacuum and single errors in the four-qubit example to three code bits. Explain how the larger circuit computes and then clears the error locations in parallel. Follow the two cleanup passes, including noise during the first transfer, and identify which events are counted by the proof’s error bound.
 
-**Dependencies and story role.** M14–M28; this connects the complete account to its prior work and reproducible evidence.
+**Dependencies and story role.** M04–M08, M17, and M28; this turns the routing benchmark into a controller comparison.
 
-**Conceptual connection.** Finite calculations test conventions and examples. The arbitrary-size factorization, age-packing argument and complete-channel construction remain analytical claims with their stated assumptions.
+**Conceptual connection.** A reset discards the compressed code at the contact. Inside the bulk the circuit is reversible, uses its own physical qubits as workspace, and returns them to the output.
 
-**Sources.** [Related work](../references/RELATED_WORK.md), [verification guide](../verification/README.md), and [contact-throughput theorem](../science/contact_throughput.md).
+**Sources.** [Four-qubit example](WATROUS_BRIDGE.md#compress-sparse-errors-before-routing), [two-pass compressor](../science/single_contact_compression.md), [related work](../references/RELATED_WORK.md), and [verification guide](../verification/README.md).
 
-### M30 — Assemble distance, contact throughput and complete initialization
+### M30 — Choose the right cooling law for the architecture
 
 **Central question.** How should a proposed register and reset layout be assessed from end to end?
 
-**Understanding target.** State the physical task and noise timing; apply the general distance converse; select the proved path/slab construction or the exact contact-cover assignment method when its hypotheses hold. Report the resulting complete-channel accuracy and the contact/transport resources needed to attain it.
+**Understanding target.** State the task and noise timing. For the path, slab, independent bulk, and one-gateway clique, identify the applicable converse and controller and report their resource costs. On the clique, explain how at $`p=c/m^2`$ a constant routing error and a vanishing optimal error can occur on the same graph.
 
-**Dependencies and story role.** M12 and M13–M29; this synthesizes the original geometry law and the exact throughput upgrade.
+**Dependencies and story role.** M12 and M13–M29; this connects geometric distance, contact contention, and in-register reversible compression.
 
-**Conceptual connection.** Distances control how far entropy must travel; contact throughput can add a queue even at distance one. Arbitrary-graph SWAP optimality, logical-only cooling, laboratory time, and thermodynamic reset costs remain separate questions.
+**Conceptual connection.** Circuit depth and waiting time enter the same output error. State where the weak-noise theorem ends and distinguish its analytical scaling from the finite schedule and channel checks.
 
-**Sources.** [Scientific overview](../science/README.md), [model](../science/model.md), [geometry](../science/geometry.md), [exact contact throughput](../science/contact_throughput.md), and the [single-anchor bridge](WATROUS_BRIDGE.md).
+**Sources.** [Scientific overview](../science/README.md), [geometry](../science/geometry.md), [exact contact throughput](../science/contact_throughput.md), [single-contact compression](../science/single_contact_compression.md), and the [Watrous bridge](WATROUS_BRIDGE.md).

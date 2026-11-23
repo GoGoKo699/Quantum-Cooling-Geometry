@@ -1,6 +1,6 @@
 # Quantum Cooling Geometry
 
-**How accurately can an entire noisy quantum register be initialized when entropy can leave only through selected reset contacts?** Distance to a cold contact and contention for that contact impose distinct accuracy limits. Paths have a sharp distance-sum law. Networks whose data qubits couple only to contacts admit an exact throughput law and an optimal SWAP/reset schedule.
+**How accurately can an entire noisy quantum register be initialized when entropy can leave only through selected reset contacts?** Distance sets a limit for every controller, and shared contacts introduce contention. When the bulk can interact, reversible compression can reduce how much information must pass through a contact to be erased.
 
 For a path with reset set $`S`$, independent depolarization $`p`$ per round, and
 
@@ -55,6 +55,17 @@ For one contact shared by $`m`$ leaves, every leaf is one edge from reset, yet
 
 The quadratic cost comes from final waiting ages $`1,2,\ldots,m`$. Multiple contacts can reduce it by balancing their loads subject to the actual wiring. [Use the exact schedule planner](verification/README.md#exact-contact-assignment-and-schedule).
 
+## Reversible compression through one reset contact
+
+Connect a clique of $`m`$ bulk qubits to one reset contact through a single gateway. The best SWAP/reset schedule has final bulk ages $`1,3,\ldots,2m-1`$ and error of order $`\min\{1,pm^2\}`$. A two-pass reversible compressor uses the same contact and physical qubits to attain the optimal error
+
+```math
+\epsilon_*=\Theta_c(pm\log m),
+\qquad 0\lt p\le c/m^2
+```
+
+for any fixed positive $`c`$ and sufficiently large bulk. At $`p=c/m^2`$, this error vanishes, while the exact SWAP/reset optimum tends to $`1-e^{-c/2}`$. The protocol refreshes the bulk, compresses sparse errors within blocks, and erases the resulting indices through the gateway. A final compression clears the errors accumulated during that transfer. The [proof and gate schedule](science/single_contact_compression.md) account for depolarization during every layer and show why even unrestricted control has a logarithmic terminal window of noise that cannot reach the contact.
+
 ## Why longer cooling does not remove the floor
 
 At the common output time, some recent noise events are too far from a contact for their entropy to reach it. A selected complete-depolarization event in this terminal region leaves a tracial qubit factor, even after arbitrary allowed coherent processing. Its output has largest eigenvalue at most one half. Counting such locations gives the finite-noise lower bound. The [full proof](science/converse.md) does not assume independent output errors or noiseless exact reset by the controller.
@@ -72,6 +83,7 @@ python -m pip install -r verification/requirements.txt
 python verification/verify.py
 python verification/geometry_checks.py
 python verification/contact_throughput_checks.py
+python verification/check_single_contact.py
 python verification/make_figure.py
 ```
 
@@ -81,7 +93,7 @@ The [verification guide](verification/README.md) records numerical scopes, exact
 
 Each round applies disjoint nearest-neighbor unitary gates, independent depolarization on **all** sites including idle qubits, then CPTP operations at the contacts. The output follows the final contact operation. Contacts are ideal resources; bulk measurements, discarded workspace, protected side registers and observation-conditioned feedback are outside the model. All physical outputs must be pure together. Logical cooling, selected-subsystem polarization and thermodynamic heat or work costs are separate tasks.
 
-One-port cooling and SWAP transport have prior precedents. The contribution here is the exact terminal-event factorization, the bound uniform over allowed coherent controls, its matching physical-register accuracy law, and the exact throughput optimum with an attaining assignment/schedule for networks without bulk-to-bulk edges. [Related work](references/RELATED_WORK.md) identifies inherited constructions and distinguishes noisy algorithmic cooling, target-preserving dephasing and earlier reset models. The effect also occurs classically; no quantum-over-classical advantage is claimed.
+One-port cooling, SWAP transport, and reversible entropy compression have prior precedents. The results here give explicit accuracy laws for synchronized full-register reset, including when SWAP schedules attain the optimum and when compression beats them. The [related-work comparison](references/RELATED_WORK.md) distinguishes these laws from prior cooling and reset models. The compression uses basis permutations, which also have a classical reversible interpretation.
 
 ## Purpose and contact
 

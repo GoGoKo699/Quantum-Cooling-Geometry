@@ -122,3 +122,7 @@ M(G,S)\le
 ```
 
 Both logarithms are negative. On paths, $`pM\le\epsilon`$ is sufficient by the construction. The [physical consequences](interpretation.md) turn this into register-size and contact-placement rules, while stating the limits for logical cooling and other noise models.
+
+## Bulk interactions through a single reset gateway
+
+The [single-contact compression theorem](single_contact_compression.md) uses the same gate, noise, contact, and output conventions. A clique of bulk qubits connects to one reset contact by one edge. Its exact SWAP/reset optimum has an error proportional to the quadratic contact-age sum at small noise. The unrestricted weak-noise optimum is of order $`pm\log m`$. The difference comes from concentrating sparse errors onto a few bulk qubits before their carriers pass through the same contact.
