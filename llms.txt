@@ -8,6 +8,7 @@ Authoritative routes:
 - science/model.md — discrete gates–noise–contacts model, reference-sensitive half-diamond error, exact graph and path statements.
 - science/converse.md — selected late complete-depolarization factorization, event counting, shallow-depth argument and control-uniform graph lower bound.
 - science/geometry.md — exact endpoint conveyor error; arbitrary fixed path contacts; optimal contact placement including dense contacts; rectangular slabs with a full cold face.
+- science/single_contact_compression.md — exact SWAP-only optimum, logarithmic terminal cone bound, and tight weak-noise accuracy using two reversible compression passes through one gateway.
 - science/interpretation.md — one-port size ceiling, spread versus clustered contacts, and dimensional interpretation.
 - science/noise_and_scope.md — mixed-unitary minorization converse, phase-noise counterexamples, physical-output requirement and timing limits.
 - references/RELATED_WORK.md and references/references.bib — prior one-port cooling, transport, noisy cooling, causal ingredients and exact model comparisons.
@@ -20,7 +21,7 @@ Suggested routes:
 - Story: README.md -> learning/WATROUS_BRIDGE.md worked example -> science/interpretation.md.
 - Study: learning/README.md -> learning/WATROUS_BRIDGE.md -> learning/MILESTONES.md -> the linked authoritative science.
 - Theorem: science/model.md -> science/converse.md -> science/geometry.md -> science/noise_and_scope.md.
-- Reproduction: verification/README.md -> verification/verify.py and verification/geometry_checks.py.
+- Reproduction: verification/README.md -> verification/verify.py, verification/geometry_checks.py, verification/contact_throughput_checks.py, and verification/check_single_contact.py.
 
 Essential distinctions:
 - Every physical qubit remains an output; input-reference decoupling is required.

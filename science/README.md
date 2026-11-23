@@ -2,7 +2,7 @@
 
 How accurately can a noisy physical register be initialized when entropy can leave only through selected reset contacts?
 
-The result is an exact geometry-dependent lower bound for arbitrary local coherent control, with matching order for every contact placement on a chain and for slabs cooled from a full face. An exact throughput-sensitive optimum and explicit optimal schedule are also available when noncontact qubits have no mutual couplings. Every physical qubit is retained, and initialization includes removal of input-reference correlations.
+The result is an exact geometry-dependent lower bound for arbitrary local coherent control, with matching order for every contact placement on a chain and for slabs cooled from a full face. For independent bulk qubits, a contact assignment gives the exact optimum. For a clique served through one gateway, reversible compression beats every SWAP schedule and attains the optimal error order in the weak-noise regime. Every physical qubit is retained, and initialization includes removal of input-reference correlations.
 
 Read in this order:
 
@@ -10,8 +10,9 @@ Read in this order:
 2. [Causal converse](converse.md): the surviving tracial-qubit factor, terminal noise count and duration-independent bound.
 3. [Geometry and constructions](geometry.md): exact SWAP replacement channel, fixed path contacts, optimal placement and cooled-face slabs.
 4. [Contact throughput](contact_throughput.md): exact arbitrary-control optimum, contact assignment, attaining SWAP/reset schedule and quadratic star bottleneck.
-5. [Physical interpretation](interpretation.md): register size, spread versus clustered contacts, and dimensional scaling.
-6. [Noise and task boundaries](noise_and_scope.md): a mixed-unitary extension, target-preserving counterexamples and physical-output requirements.
+5. [Single-contact compression](single_contact_compression.md): exact routing benchmark, actual gate-cone converse, and a two-pass compressor with charged depth.
+6. [Physical interpretation](interpretation.md): register size, spread versus clustered contacts, and dimensional scaling.
+7. [Noise and task boundaries](noise_and_scope.md): a mixed-unitary extension, target-preserving counterexamples and physical-output requirements.
 
 [Related work](../references/RELATED_WORK.md) credits prior one-port cooling and transport constructions. [Verification](../verification/README.md) documents finite channel calculations, reference-sensitive tests, trajectory checks and their limits.
 

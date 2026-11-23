@@ -293,6 +293,26 @@ A_*=\frac{s q(q+1)}2+r(q+1).
 
 This gives a direct design calculation: distribute traffic where physical edges permit, compile the assignment, and read off its exact complete-register accuracy. The proof relies on independent bulk vertices; it does not establish SWAP optimality after adding bulk–bulk couplings. See the [complete throughput proof](../science/contact_throughput.md#exact-finite-noise-theorem) and [assignment compiler](../science/contact_throughput.md#computing-the-optimal-assignment) for the authoritative statement.
 
+## Compress sparse errors before routing
+
+Put four bulk qubits in a clique, with a reset contact attached to just one of them. The initial SWAP sweep replaces the unknown input and decouples its reference. The output can still contain bit errors because the first carriers returned to the bulk had more time to heat.
+
+Suppose the four bulk bits now contain vacuum or one error. A reversible encoding can move the information into three bits and leave the fourth zero:
+
+| Bulk string | Encoded bulk string |
+|---|---|
+| ``0000`` | ``0000`` |
+| ``1000`` | ``1000`` |
+| ``0100`` | ``1010`` |
+| ``0010`` | ``1100`` |
+| ``0001`` | ``1110`` |
+
+The first bit records whether there is an error, and the next two record its position. Three disjoint swaps of basis states extend this table to a permutation of all sixteen strings. A basis permutation is a unitary. The controller can therefore return the last bulk bit to zero without measuring whether an error occurred. In a larger bulk block, the number of possible positions grows linearly while the number of index bits grows logarithmically.
+
+Any encoded information still has to leave through the reset contact. After the first compression, the proof tracks every retained carrier during this transfer. Those carriers start clean and their noise occurs at independent spacetime locations. A final compression concentrates their new errors and erases the new record. This is why the gates–noise–reset order and the second pass matter.
+
+The [full construction](../science/single_contact_compression.md) implements the encoding with disjoint one- and two-qubit gate layers, borrows workspace within the bulk, and counts all the noise that acts while the controller is running. The same Watrous channel tools certify the output as a replacement channel, so its state error also bounds its error on inputs carrying an arbitrary reference.
+
 ## Conditions that remain part of the explanation
 
 All physical outputs are retained and must be initialized simultaneously. Gates are prescribed in advance; the noise is unobserved. No clean bulk ancillas, bulk measurement/reset, discarded bulk workspace, protected side memory, or measurement-conditioned global feedback is included. The contacts may be ideal CPTP maps, and even joint maps on the contact set are allowed in the converse. This strengthens the bound; the constructions require only independent resets.

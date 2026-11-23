@@ -1,5 +1,7 @@
 # What contact geometry changes
 
+On a bulk clique with one gateway, the [single-contact compression theorem](single_contact_compression.md) shows that the reset edge constrains both controllers, while the amount of information crossing it depends on the available bulk gates.
+
 An ideal cold contact can erase the qubit that reaches it. Bulk noise continues to act while the controller moves entropy around the register. At a common output time, noise that occurred too far from a contact has had no opportunity to reach an entropy outlet. The [converse](converse.md) makes this causal picture exact even when the controller uses arbitrary local entangling gates or coherent compression.
 
 On a path the right geometric quantity is the sum of distances to the nearest contact, not just the largest distance or the number of contacts:
