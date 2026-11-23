@@ -14,13 +14,13 @@ For every $`0\le p\le1`$, set $`h_p(a)=[1+(1-p)^a]/2`$. The SWAP optimum is exac
 \epsilon_{\rm SWAP}(m,p)=1-\prod_{j=1}^{m}h_p(2j-1).
 ```
 
-For each fixed $`c>0`$ there are positive constants $`a_c,b_c`$ such that, for $`0\le p\le\min\{1,c/m^2\}`$,
+For each fixed $`c\gt 0`$ there are positive constants $`a_c,b_c`$ such that, for $`0\le p\le\min\{1,c/m^2\}`$,
 
 ```math
 a_c\,p m\log_2(2m)\ \le\ \epsilon_*(m,p)\ \le\ b_c\,p m\log_2(2m).
 ```
 
-The construction uses the same $`m+1`$ physical qubits and $`O(m)`$ prescribed gates and rounds. In particular, for a fixed $`c>0`$ and $`p=c/m^2`$ as $`m\to\infty`$,
+The construction uses the same $`m+1`$ physical qubits and $`O(m)`$ prescribed gates and rounds. In particular, for a fixed $`c\gt 0`$ and $`p=c/m^2`$ as $`m\to\infty`$,
 
 ```math
 \epsilon_{\rm SWAP}(m,c/m^2)\longrightarrow 1-e^{-c/2},
@@ -55,13 +55,13 @@ If $`T\ge L`$, the last $`L`$ noise layers each have at least $`\lfloor n/2\rflo
 \frac{1-(1-p)^{L\lfloor n/2\rfloor}}{2}.
 ```
 
-For $`T<L`$, take the maximally mixed input. The backward union of the contact operations at the initial time has at most $`2^T<n`$ sites. Inserting a full depolarizer on a site outside it leaves this input unchanged. The same factorization gives half trace distance at least $`1/2`$ for that input. The common maximally mixed witness works for both duration cases and for randomization. Since $`L\lfloor n/2\rfloor=\Theta(m\log_2(2m))`$, the displayed bound is $`\Omega(\min\{1,pm\log_2(2m)\})`$ for all $`p`$. It gives the claimed lower bound on the weak-noise interval.
+For $`T\lt L`$, take the maximally mixed input. The backward union of the contact operations at the initial time has at most $`2^T\lt n`$ sites. Inserting a full depolarizer on a site outside it leaves this input unchanged. The same factorization gives half trace distance at least $`1/2`$ for that input. The common maximally mixed witness works for both duration cases and for randomization. Since $`L\lfloor n/2\rfloor=\Theta(m\log_2(2m))`$, the displayed bound is $`\Omega(\min\{1,pm\log_2(2m)\})`$ for all $`p`$. It gives the claimed lower bound on the weak-noise interval.
 
 ## A reversible compressor with a paid workspace
 
 The following circuit on a block of $`u`$ bulk sites takes a basis input of Hamming weight at most two to a string supported on a prescribed set of $`O(\log_2(2u))`$ code sites. It uses $`O(\log_2(2u))`$ disjoint-edge layers and $`O(u)`$ gates. All temporary wires are within the block and end at zero on the promised strings. The same circuit also works for inputs of weight at most one. The circuit always runs, independent of the input or the noise.
 
-For $`u<256`$, use the whole block as the code and apply no gates. For $`u\ge256`$, write $`d=\lfloor u/256\rfloor`$. Partition into $`d`$ groups of 256 sites, adding the remainder to the last group so each size is between 256 and 511. In a group of size $`v`$, map its $`1+v+\binom v2`$ strings of weight at most two, in weight-then-lexicographic order, to consecutive binary code values on its first 17 wires. The other $`v-17`$ output wires are zero on these strings. The count is at most $`1+511+\binom{511}{2}=130817<2^{17}`$. Complete this partial injection on the union of its input and output sets. Each open path is closed by sending its end back to its start. Existing cycles are retained and every other basis string stays fixed. Decompose its cycles into basis transpositions, then decompose each transposition along a Gray-code path into controlled bit flips. The exact [one- and two-qubit gate decomposition](https://doi.org/10.1103/PhysRevA.52.3457) needs no additional wires. Group sizes are bounded, so this stage has uniformly bounded depth and $`O(u)`$ gates when the disjoint groups run in parallel. The constants from this compilation are only used for the asymptotic resource bound.
+For $`u\lt 256`$, use the whole block as the code and apply no gates. For $`u\ge256`$, write $`d=\lfloor u/256\rfloor`$. Partition into $`d`$ groups of 256 sites, adding the remainder to the last group so each size is between 256 and 511. In a group of size $`v`$, map its $`1+v+\binom v2`$ strings of weight at most two, in weight-then-lexicographic order, to consecutive binary code values on its first 17 wires. The other $`v-17`$ output wires are zero on these strings. The count is at most $`1+511+\binom{511}{2}=130817\lt 2^{17}`$. Complete this partial injection on the union of its input and output sets. Each open path is closed by sending its end back to its start. Existing cycles are retained and every other basis string stays fixed. Decompose its cycles into basis transpositions, then decompose each transposition along a Gray-code path into controlled bit flips. The exact [one- and two-qubit gate decomposition](https://doi.org/10.1103/PhysRevA.52.3457) needs no additional wires. Group sizes are bounded, so this stage has uniformly bounded depth and $`O(u)`$ gates when the disjoint groups run in parallel. The constants from this compilation are only used for the asymptotic resource bound.
 
 The 17 code positions define 17 lanes, each consisting of one bit from each group. At most two groups can have nonzero codes, so every lane has weight at most two. There are at least $`239d`$ clean wires on a promised block input. Compress the 17 lanes in a fixed sequence, reusing this workspace. Compressing one lane leaves all other lane inputs alone.
 
@@ -69,18 +69,18 @@ The 17 code positions define 17 lanes, each consisting of one bit from each grou
 
 Pad a lane of $`d`$ bits with clean zeros to length $`N=2^{\lceil\log_2 d\rceil}`$ and put its wires at the leaves of a full binary tree. Dummy leaves are scratch wires from the same block. For a node at height $`k`$, store its occupancy $`f`$ and $`k`$-bit addresses of its first and last occupied leaves, measured within that node. An empty node has both addresses zero. Leaves have only an occupancy bit. The **retained code** is a copy of the root occupancy and the two root addresses. For $`d=1`$, the code can simply be the lane bit.
 
-1. Compute all internal occupancies from bottom to top. To write $`f_L\lor f_R`$ into a zero target use two CNOTs from the children and a Toffoli from both. Each level uses constant depth since its node triples are disjoint.
-2. For each parent of height $`k`$, copy each child's occupancy into $`k-1`$ distinct work bits. Copy trees for different child flags are disjoint and run in parallel, in depth $`O(\log_2(2\log_2 N))`$ for $`N\ge2`$. Use these copies solely as controls in the next step.
-3. Compute the addresses from bottom to top. For a parent let $`y_L,y_R`$ be the first-leaf addresses and $`z_L,z_R`$ the last-leaf addresses of its children. The new low bits are
+**Compute occupancy.** Compute all internal occupancies from bottom to top. To write $`f_L\lor f_R`$ into a zero target use two CNOTs from the children and a Toffoli from both. Each level uses constant depth since its node triples are disjoint.
+**Copy flags for parallel control.** For each parent of height $`k`$, copy each child's occupancy into $`k-1`$ distinct work bits. Copy trees for different child flags are disjoint and run in parallel, in depth $`O(\log_2(2\log_2 N))`$ for $`N\ge2`$. Use these copies solely as controls in the next step.
+**Compute the addresses.** Work from bottom to top. For a parent let $`y_L,y_R`$ be the first-leaf addresses and $`z_L,z_R`$ the last-leaf addresses of its children. The new low bits are
 
-   ```math
-   y=y_L\mathbin{\oplus}[(\neg f_L)y_R],
-   \qquad
-   z=z_R\mathbin{\oplus}[(\neg f_R)z_L],
-   ```
+```math
+y=y_L\mathbin{\oplus}[(\neg f_L)y_R],
+\qquad
+z=z_R\mathbin{\oplus}[(\neg f_R)z_L],
+```
 
-   with bitwise multiplication by a Boolean scalar. The respective high bits are $`f_R\land\neg f_L`$ and $`f_R`$. These are the correct first and last addresses, including when one or both children are empty. Each low-bit sublayer consists of one CNOT per output bit into a distinct zero target, then one negatively controlled Toffoli per output bit with its own flag copy. First and last registers are disjoint. The two high bits are computed in separate sublayers using the original flags. All parents at one height use disjoint qubits, and an exact Toffoli over three sites of the clique requires a fixed number of one- and two-qubit layers. Thus each tree height uses a constant number of disjoint-edge layers.
-4. Copy the root registers into zero code wires using disjoint CNOTs, then reverse steps 3, 2, and 1. This returns every temporary bit other than the code and leaves the original lane intact.
+with bitwise multiplication by a Boolean scalar. The respective high bits are $`f_R\land\neg f_L`$ and $`f_R`$. These are the correct first and last addresses, including when one or both children are empty. Each low-bit sublayer consists of one CNOT per output bit into a distinct zero target, then one negatively controlled Toffoli per output bit with its own flag copy. First and last registers are disjoint. The two high bits are computed in separate sublayers using the original flags. All parents at one height use disjoint qubits, and an exact Toffoli over three sites of the clique requires a fixed number of one- and two-qubit layers. Thus each tree height uses a constant number of disjoint-edge layers.
+**Retain the code.** Copy the root registers into zero code wires using disjoint CNOTs, then reverse the address computations, flag copies, and occupancy computations. This returns every temporary bit other than the code and leaves the original lane intact.
 
 ### Clear the lane and restore the workspace
 
