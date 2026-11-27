@@ -35,6 +35,12 @@ The figure uses 16 qubits and 8 contacts. The [general comparison](science/inter
 
 The constants in the order statements are absolute. The [exact throughput theorem](science/contact_throughput.md) below covers a further architecture class; a matching routing theorem for arbitrary graphs is not supplied.
 
+## Run the path conveyor
+
+Use the supplied register with its known contact positions. For a single contact at the left end, number the sites from that end. In odd rounds SWAP sites 1 and 2, 3 and 4, and so on. In even rounds SWAP sites 2 and 3, 4 and 5, and so on. Let the stipulated noise act on every site after each SWAP layer, then reset the contact to zero. For a path with more than one site, stop after twice the number of sites minus one rounds. A single contact site by itself needs one reset round.
+
+For several contacts, partition the path into contiguous nearest-contact cells, breaking ties consistently. Use the same alternating SWAP layers inside each cell, starting the numbering at its left edge and resetting its actual contact after every noise layer. Run all cells until twice the largest cell size in rounds, including the cycles in shorter cells. Return every qubit immediately after the final contact resets. Every original carrier has reached a contact and been discarded. The [age calculation](science/geometry.md#every-fixed-contact-placement-on-a-path) gives the error of the resulting replacement state. No measurement data or extra qubits are needed.
+
 ## Exact accuracy and an optimal reset schedule
 
 Suppose the noncontact qubits $`B=V\setminus S`$ have no mutual graph edges. Assign each one to an adjacent reset contact, with $`\ell_s`$ qubits assigned to contact $`s`$. The optimum over **all allowed coherent controls, contact maps and durations** is
@@ -64,7 +70,13 @@ Connect a clique of $`m`$ bulk qubits to one reset contact through a single gate
 \qquad 0\lt p\le c/m^2
 ```
 
-for any fixed positive $`c`$ and sufficiently large bulk. At $`p=c/m^2`$, this error vanishes, while the exact SWAP/reset optimum tends to $`1-e^{-c/2}`$. The protocol refreshes the bulk, compresses sparse errors within blocks, and erases the resulting indices through the gateway. A final compression clears the errors accumulated during that transfer. The [proof and gate schedule](science/single_contact_compression.md) account for depolarization during every layer and show why even unrestricted control has a logarithmic terminal window of noise that cannot reach the contact.
+for any fixed positive $`c`$ and sufficiently large bulk. At $`p=c/m^2`$, this error vanishes, while the exact SWAP/reset optimum tends to $`1-e^{-c/2}`$.
+
+1. Refresh the bulk with the [gateway SWAP/reset schedule](science/single_contact_compression.md#exact-swap-benchmark). Discard all original carriers through the contact. Continue resetting that contact after every noise layer throughout the controller.
+2. Partition the bulk into the prescribed blocks. In parallel, run the [fixed reversible compressor](science/single_contact_compression.md#a-reversible-compressor-with-a-paid-workspace) in each block. Its bounded-size basis permutations and CNOT/Toffoli trees put sparse error patterns on code wires and restore the scratch wires inside each block on the promised fault-free branch. In a fixed order, SWAP all code carriers through the gateway and reset them at the contact, draining the gateway first if it is itself a code wire.
+3. Run the same compressor on the whole bulk and drain its code carriers. Return the entire register after the final reset. The controller follows the same schedule in every run. Noise during the transfer and both compression passes contributes to the error, including branches outside the sparse-error promise.
+
+The [gate and resource account](science/single_contact_compression.md#two-compression-passes-under-continuous-noise) charges every layer and site, including scratch, and derives the error from the two-pass schedule.
 
 ## Why longer cooling does not remove the floor
 
