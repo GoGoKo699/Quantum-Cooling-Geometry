@@ -61,8 +61,17 @@ function mathCompiler() {
   const {AllPackages}=require('mathjax-full/js/input/tex/AllPackages.js');
   const {SerializedMmlVisitor}=require('mathjax-full/js/core/MmlTree/SerializedMmlVisitor.js');
   const {STATE}=require('mathjax-full/js/core/MathItem.js');
+  const {CharacterMap}=require('mathjax-full/js/input/tex/SymbolMap.js');
+  const {Configuration}=require('mathjax-full/js/input/tex/Configuration.js');
+  const {default:ParseMethods}=require('mathjax-full/js/input/tex/ParseMethods.js');
   RegisterHTMLHandler(liteAdaptor());
-  const doc=mathjax.document('',{InputJax:new TeX({packages:AllPackages,tags:'none'}),OutputJax:new SVG({fontCache:'none'})});
+  // Mark the original MathJax operator without changing its grouping or
+  // inherited style. A literal ⊥ still uses the unmarked base parser.
+  const provenance='merlin-operator-provenance';
+  new CharacterMap(provenance,ParseMethods.mathchar0mo,{perp:['⊥',{'data-merlin-command':'perp'}]});
+  Configuration.create(provenance,{handler:{macro:[provenance]},priority:0});
+  const doc=mathjax.document('',{InputJax:new TeX({packages:[...AllPackages,provenance],tags:'none'}),
+    OutputJax:new SVG({fontCache:'none'})});
   const visitor=new SerializedMmlVisitor();
   return (tex,display)=>visitor.visitTree(doc.convert(tex,{display,end:STATE.CONVERT}));
 }
@@ -70,18 +79,21 @@ function mathCompiler() {
 // Self-contained function executed inside the hosted page, also exercised by the
 // local-browser regression fixture. It never injects styling or renders TeX there.
 function inspectArticle(root, expected) {
-  function canonical(e, inherited='') {
+  function canonical(e, operators, inherited='') {
     const tag=e.localName;
     if (['annotation','annotation-xml','mspace'].includes(tag)) return [];
     const variant=e.getAttribute('mathvariant') || inherited;
     if (['mi','mo','mn','mtext','ms'].includes(tag)) {
       const text=e.textContent.trim();
-      return text?[[tag,text,variant]]:[];
+      if(!text) return [];
+      const token=[tag,text,variant];
+      if(tag==='mo') operators.push({token,element:e});
+      return [token];
     }
     // Preserve each structural child slot: flattening numerator and denominator
     // together would confuse (a+b)/c with a/(b+c), and similarly for scripts.
     const children=[...e.children].filter(c=>!['annotation','annotation-xml','mspace'].includes(c.localName))
-      .map(c=>canonical(c,variant));
+      .map(c=>canonical(c,operators,variant));
     if (['math','mrow','mstyle','semantics'].includes(tag)) return children.flat();
     const semantic={};
     for (const name of ['notation','accent','accentunder','linethickness','bevelled','open','close','separators']) if(e.hasAttribute(name)) semantic[name]=e.getAttribute(name);
@@ -89,6 +101,28 @@ function inspectArticle(root, expected) {
     // GitHub inserts empty mrow alignment nodes; ignore those inside the cell
     // while preserving the cell and row themselves, including empty cells.
     return [[tag,semantic,tag==='mtd'?children.flat():children]];
+  }
+  function reconcileOperators(expected, actual, tex) {
+    if(expected.length!==actual.length) return [];
+    const aliases=[];
+    for(let i=0;i<expected.length;i++) {
+      const reference=expected[i], hosted=actual[i];
+      const command=hosted.element.getAttribute('data-latex');
+      // Match only the observed alias for an ordinary norm fence. In particular,
+      // MathJax's U+2225 for \parallel has no ordinary-operator class here.
+      if(reference.token[1]==='∥' && hosted.token[1]==='‖' &&
+         reference.element.getAttribute('data-mjx-texclass')==='ORD' && command==='\\|') {
+        hosted.token[1]=reference.token[1];
+        aliases.push('norm-fence');
+      }
+      if(reference.token[1]==='⊥' && hosted.token[1]==='⟂' && command==='\\perp' &&
+         reference.element.getAttribute('data-merlin-command')==='perp' &&
+         typeof tex==='string' && !tex.includes('merlin-command')) {
+        hosted.token[1]=reference.token[1];
+        aliases.push('perpendicular');
+      }
+    }
+    return aliases;
   }
   function plain(math) {
     const copy=math.cloneNode(true);
@@ -114,13 +148,20 @@ function inspectArticle(root, expected) {
     const errors=[];
     if(nodes.length!==1) errors.push('Expected one accessible MathML representation; found '+nodes.length);
     const actual=nodes[0],want=expected[i];
-    let expectedSignature=null,actualSignature=null;
-    if(actual) actualSignature=JSON.stringify(canonical(actual));
+    let expectedSignature=null,operatorAliases=[];
+    const actualOperators=[];
+    const actualTree=actual?canonical(actual,actualOperators):null;
     if(want) {
       const parsed=new DOMParser().parseFromString(want.mml,'application/xml');
       if(parsed.querySelector('parsererror,merror')) errors.push('Source compiler returned invalid/error MathML');
-      else expectedSignature=JSON.stringify(canonical(parsed.documentElement));
+      else {
+        const expectedOperators=[];
+        const expectedTree=canonical(parsed.documentElement,expectedOperators);
+        expectedSignature=JSON.stringify(expectedTree);
+        operatorAliases=reconcileOperators(expectedOperators,actualOperators,want.tex);
+      }
     }
+    const actualSignature=actualTree===null?null:JSON.stringify(actualTree);
     if(!want) errors.push('Unexpected extra hosted expression');
     const match=!!actual && !!expectedSignature && expectedSignature===actualSignature;
     if(!match) errors.push('Source-to-host MathML structure mismatch');
@@ -129,7 +170,8 @@ function inspectArticle(root, expected) {
       errors.push('Display geometry is unmeasurable, overflowing or collapsed');
     return {rendered:!!actual,errors,text_source:'mathml',text:actual?plain(actual):'',
       source_sha256:want?.source_sha256,structural_match:match,
-      expected_signature:expectedSignature,actual_signature:actualSignature,geometry:measure};
+      expected_signature:expectedSignature,actual_signature:actualSignature,
+      operator_aliases:operatorAliases,geometry:measure};
   });
   return {errors:pageErrors,math};
 }
@@ -286,7 +328,7 @@ function sessionBinding(inventory, tree, expectedBytes, contractBytes, runtime, 
 }
 function newSession(binding, at) {
   return {schema_version:1,kind:'hosted_math_session',binding,started_at:at,updated_at:at,
-    completed:[],failures:[]};
+    completed:[],failures:[],navigation_retries:[]};
 }
 function saveSession(output, session) {
   const temporary=path.join(output,'capture-state.json.tmp');
@@ -355,7 +397,8 @@ function loadResume(directory, binding, inventory, now=Date.now()) {
         receipt_sha256:descriptor.receipt.sha256,observed_at:receipt.observed_at}});
   }
   return {reusable,previous_attempt:{directory:path.resolve(directory),session_sha256:sha256(bytes),
-    started_at:session.started_at,updated_at:session.updated_at,failures:session.failures}};
+    started_at:session.started_at,updated_at:session.updated_at,failures:session.failures,
+    navigation_retries:session.navigation_retries ?? []}};
 }
 function runTextCheck(args, helper, output, inventoryFile, captureFile, resultFile, contractFile=null) {
   const command=[helper,'check','--inventory',path.join(output,inventoryFile),'--capture',path.join(output,captureFile),
@@ -391,13 +434,26 @@ function savePageReceipt(args, helper, output, session, inventory, source, viewp
   session.completed.push(descriptor);session.updated_at=new Date().toISOString();saveSession(output,session);
   return {passed:true,result,artifacts:[...files,descriptor.receipt],receipt};
 }
-async function captureHostedPage(context, source, expected, prefix, output, readinessOptions={}) {
+async function captureHostedPage(context, source, expected, prefix, output, options={}) {
   const page=await context.newPage();
   const item={path:source.path,url:source.url,revision:source.revision,source_sha256:source.source_sha256,errors:[],math:[]};
   try {
-    const response=await page.goto(source.url,{waitUntil:'domcontentloaded',timeout:60000});
+    const navigate=async()=>{
+      const response=await page.goto(source.url,{waitUntil:'domcontentloaded',timeout:60000});
+      if(page.url()!==source.url) throw new Error('Browser redirected away from exact pinned source URL');
+      return response;
+    };
+    let response=await navigate();
+    const status=response?.status();
+    // Retry only a response from the exact pinned navigation, with no redirect.
+    if([502,503,504].includes(status)) {
+      if(response.url()!==source.url || response.request().redirectedFrom()!==null)
+        throw new Error('Browser redirected away from exact pinned source URL');
+      options.onNavigationRetry?.({http_status:status,observed_at:new Date().toISOString()});
+      await page.waitForTimeout(1000);
+      response=await navigate();
+    }
     if(response?.status()!==200) throw new Error('HTTP '+response?.status());
-    if(page.url()!==source.url) throw new Error('Browser redirected away from exact pinned source URL');
     const article=page.locator('article.markdown-body').first();
     await article.waitFor({state:'visible',timeout:30000});
     await page.evaluate(async()=>{
@@ -406,7 +462,7 @@ async function captureHostedPage(context, source, expected, prefix, output, read
       }
       window.scrollTo(0,0);
     });
-    await waitForHostedMath(article,expected.length,readinessOptions);
+    await waitForHostedMath(article,expected.length,options);
     Object.assign(item,await article.evaluate(inspectArticle,expected));
     const html=prefix+'.html',png=prefix+'.png';
     fs.writeFileSync(path.join(output,html),await page.content());
@@ -486,7 +542,13 @@ async function run(args, adapters={}) {
             pageProvenance.push({path:source.path,viewport,observed_at:item.observed_at,reused:true,...prior.provenance});
           } else {
             try {
-              item=await captureHostedPage(context,{...source,revision:args.revision},expected[source.path],prefix,output);
+              item=await captureHostedPage(context,{...source,revision:args.revision},expected[source.path],prefix,output,{
+                onNavigationRetry:retry=>{
+                  session.navigation_retries.push({path:source.path,url:source.url,viewport,...retry});
+                  session.updated_at=retry.observed_at;
+                  saveSession(output,session);
+                }
+              });
               const receipt=savePageReceipt(args,helper,output,session,inventory,source,viewport,item,prefix,contract);
               artifacts.push(...receipt.artifacts);
               pageProvenance.push({path:source.path,viewport,observed_at:item.observed_at,reused:false});
@@ -531,7 +593,8 @@ async function run(args, adapters={}) {
   if(session) artifacts.push(artifact(output,'capture-state.json','capture_session'));
   const observations=pageProvenance.map(p=>p.observed_at).sort((a,b)=>Date.parse(a)-Date.parse(b));
   const report={...boundReport(inventory,pinned.tree,viewports,artifacts,failures,observations[0] || at),runtime,
-    report_assembled_at:new Date().toISOString(),page_provenance:pageProvenance,diagnostic_only:args.diagnosticOnly===true};
+    report_assembled_at:new Date().toISOString(),page_provenance:pageProvenance,
+    navigation_retries:session?.navigation_retries ?? [],diagnostic_only:args.diagnosticOnly===true};
   if(session?.previous_attempt) report.previous_attempt=session.previous_attempt;
   writeJSON(path.join(output,'hosted-report.json'),report);
   console.log(JSON.stringify({status:report.status,report:path.join(output,'hosted-report.json'),sha256:sha256(fs.readFileSync(path.join(output,'hosted-report.json'))),pages:report.required_pages.length,failures:report.failures.length,reused_pages:pageProvenance.filter(p=>p.reused).length}));

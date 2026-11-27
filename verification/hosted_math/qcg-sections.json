@@ -1,0 +1,22 @@
+{
+  "README.md": [
+    "Results",
+    "Run the path conveyor",
+    "Exact accuracy and an optimal reset schedule",
+    "Reversible compression through one reset contact"
+  ],
+  "learning/WATROUS_BRIDGE.md": [
+    "A complete three-qubit example"
+  ],
+  "science/geometry.md": [
+    "A one-contact path conveyor"
+  ],
+  "science/contact_throughput.md": [
+    "Exact finite-noise theorem",
+    "Construction: assignment, slots, and SWAPs"
+  ],
+  "science/single_contact_compression.md": [
+    "A reversible compressor with a paid workspace",
+    "Two compression passes under continuous noise"
+  ]
+}
